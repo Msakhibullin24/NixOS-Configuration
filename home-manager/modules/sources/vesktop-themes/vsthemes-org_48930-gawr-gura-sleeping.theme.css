@@ -1,0 +1,27 @@
+/**
+ * @name Gawr Gura sleeping
+ * @author snemak 666
+ * @version auto updates
+ * @description Тема создана в генераторе https://vsthemes.org/generator/
+ * @source https://vsthemes.org/skins/discord/48930-gawr-gura-sleeping.html
+ * @authorLink https://vsthemes.org/user/snemak+666/
+ * @authorId 59611
+*/
+@import url(https://vsthemes.org/uploads/generator/client/BasicBackground.css);
+:root {
+    --transparencycolor: 0,0,0;
+    --transparencyalpha: 0.2;
+    --messagetransparency: 0.4;
+    --guildchanneltransparency: 0.15;
+    --memberlistransparency: 0;
+    --accentcolor: 131,214,238;
+    --background: url("https://vsthemes.org/uploads/posts/2022-01/1641812388_thumb-1920-1119678.webp");
+    --backdrop: rgba(0,0,0,0.2);
+    --backgroundblur: 0px;
+    --popoutblur: 0px;
+    --backdropblur: 0px;
+    --version1_0_5:none;
+    --backgroundsize: cover;
+    --popoutsize: cover;
+    --backdropsize: cover;
+}

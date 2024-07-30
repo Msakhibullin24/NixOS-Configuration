@@ -1,0 +1,27 @@
+/**
+ * @name Genshin Impact / Sangonomiya Kokomi
+ * @author TereruNaYo
+ * @version auto updates
+ * @description Тема создана в генераторе https://vsthemes.org/generator/
+ * @source https://vsthemes.org/skins/discord/50700-genshin-impact-sangonomiya-kokomi.html
+ * @authorLink https://vsthemes.org/user/TereruNaYo/
+ * @authorId 65141
+*/
+@import url(https://vsthemes.org/uploads/generator/client/BasicBackground.css);
+:root {
+    --transparencycolor: 0,0,0;
+    --transparencyalpha: 0.15;
+    --messagetransparency: 0.4;
+    --guildchanneltransparency: 0.3;
+    --memberlistransparency: 0;
+    --accentcolor: 154,201,238;
+    --background: url("https://vsthemes.org/uploads/posts/2022-03/1648213398_genshin-impact-sangonomiya-kokomi-wallpaper-2880x1800_8.webp");
+    --backdrop: rgba(0,0,0,0.2);
+    --backgroundblur: 0px;
+    --popoutblur: 0px;
+    --backdropblur: 0px;
+    --version1_0_5:none;
+    --backgroundsize: cover;
+    --popoutsize: cover;
+    --backdropsize: cover;
+}

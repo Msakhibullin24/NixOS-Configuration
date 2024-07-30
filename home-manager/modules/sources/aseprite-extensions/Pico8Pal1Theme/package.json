@@ -1,0 +1,20 @@
+{
+  "name": "Pico8-pal1-theme",
+  "displayName": "Pico8 Pal1",
+  "description": "Pico 8 palette 1 Pixel Art Theme",
+  "version": "1.0",
+  "author": { "name": "Toronja", "email": "drukgb@gmail.com", "url": "https://twitter.com/ToronjaGB" },
+  "contributors": [
+    { "name": "-", "url": "-" }
+  ],
+  "publisher": "Toronja",
+  "license": "CC-BY-4.0",
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      { "id": "Pico8 pal1", "path": "." }
+    ]
+  }
+}

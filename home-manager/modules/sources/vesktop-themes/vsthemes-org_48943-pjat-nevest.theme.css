@@ -1,0 +1,27 @@
+/**
+ * @name Пять Невест v,1
+ * @author VaBank
+ * @version auto updates
+ * @description Тема создана в генераторе https://vsthemes.org/generator/
+ * @source https://vsthemes.org/skins/discord/48943-pjat-nevest.html
+ * @authorLink https://vsthemes.org/user/VaBank/
+ * @authorId 90692
+*/
+@import url(https://vsthemes.org/uploads/generator/client/BasicBackground.css);
+:root {
+    --transparencycolor: 0,0,0;
+    --transparencyalpha: 0.1;
+    --messagetransparency: 0.1;
+    --guildchanneltransparency: 0.2;
+    --memberlistransparency: 0;
+    --accentcolor: 16,37,148;
+    --background: url("https://vsthemes.org/uploads/posts/2022-01/1641853665_ds-oboi.webp");
+    --backdrop: rgba(0,0,0,0.2);
+    --backgroundblur: 0px;
+    --popoutblur: 0px;
+    --backdropblur: 0px;
+    --version1_0_5:none;
+    --backgroundsize: cover;
+    --popoutsize: cover;
+    --backdropsize: cover;
+}

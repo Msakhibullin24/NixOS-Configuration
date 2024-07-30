@@ -1,0 +1,27 @@
+/**
+ * @name makima chain
+ * @author General general
+ * @version auto updates
+ * @description Theme was created in generator https://vsthemes.org/generator/
+ * @source https://vsthemes.org/en/skins/discord/51546-makima-chain.html
+ * @authorLink https://vsthemes.org/user/General+general/
+ * @authorId 48494
+*/
+@import url(https://vsthemes.org/uploads/generator/client/BasicBackground.css);
+:root {
+    --transparencycolor: 0,0,0;
+    --transparencyalpha: 0.05;
+    --messagetransparency: 0.2;
+    --guildchanneltransparency: 0.05;
+    --memberlistransparency: 0;
+    --accentcolor: 122,7,25;
+    --background: url("https://vsthemes.org/uploads/posts/2022-04/1651330362_peakpx-1.webp");
+    --backdrop: rgba(0,0,0,0.2);
+    --backgroundblur: 0px;
+    --popoutblur: 0px;
+    --backdropblur: 0px;
+    --version1_0_5:none;
+    --backgroundsize: cover;
+    --popoutsize: cover;
+    --backdropsize: cover;
+}

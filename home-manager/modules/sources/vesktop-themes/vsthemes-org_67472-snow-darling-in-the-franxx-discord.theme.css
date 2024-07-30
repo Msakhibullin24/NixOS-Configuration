@@ -1,0 +1,48 @@
+/**
+ * @name Darling in the Franxx | 02 or Yota
+ * @author Solta
+ * @version 1.0.0
+ * @description Тема с 02 из Darling in the Franxx
+* @source https://github.com/So1ta/DansingFudjiwara-ThemeDiscord
+*/
+/*
+ * Изображение переведено в 4К формат.
+*/
+ 
+/* ↓ Шрифт ↓ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap");
+/* ↓ Статус пользователя в кружке ↓ */
+@import url("https://discordstyles.github.io/SoftX/RadialGlow.css");
+/* ↓ Вертикальное расположение аватара, значоков мута микрофона/настроек ↓ */
+@import url("https://discordstyles.github.io/SoftX/VerticalUserArea.css"); 
+/* ↓ Верхний бар со значком дискорд/поиск/закрыть/свернуть ↓ */
+@import url("https://discordstyles.github.io/Addons/windows-titlebar.css");
+/* ↓ Основа ↓ */
+@import url("https://mwittrien.github.io/BetterDiscordAddons/Themes/BasicBackground/BasicBackground.theme.css");
+ 
+:root {
+  --background: url("https://so1ta.github.io/css/Franxx_02_4k.png"); /* Задний фон (Пометка: если меняете на свой, лучше используйте ссылку как у меня, иначе изображение не загрузится) */
+  --font:                       "Inter";      /* Шрифт */
+  --transparencyalpha:          0.6;          /* Блюр заднего фона (общего) */
+  --transparencycolor:                0,0,0;                /* Цвет заднего фона (общего) */
+    --messagetransparency:              0;                        /* Блюр заднего фона за сообщениями */
+    --guildchanneltransparency:        0;                        /* Блюр заднего фона доролнительный    */
+    --chatinputtransparency:          0;                      /* Блюр заднего фона input чата */
+    --memberlisttransparency:          0.3;                    /* Блюр заднего фона участников    */
+    --accentcolor:                          255,163,179,0.4;              /* Общий цвет */
+  --accentcolor2:                          205, 92, 92 !important;   /* Общий цвет 2*/
+    --mentioncolor:                          205, 92, 92 !important;
+    --linkcolor:                            205, 92, 92 !important;      /* Цвет ссылок */
+}
+ 
+.theme-dark {
+  --text-normal:                #ffffff;      /* Цвет текста в сообщениях */
+  --text-muted:                 #FFA3B3;      /* Цвет даты сообщения */
+  --header-primary:             #f8e1e5;      /* Цвет доп. текста */
+  --channels-default:           #f8e1e5;      /* Цвет доп. иконок и текста */
+  --header-secondary:           #f8e1e5;      /* Цвет некоторого текста в настройках */
+  --interactive-normal:         #f8e1e5;      /* Цвет иконок */
+  --interactive-hover:          #ffffff;      /* Цвет текста выбранного канала ПРИ НАВЕДЕНИИ МЫШИ либо значков мута микрофона (Имеется ввиду чата или голосового канала) */
+  --interactive-active:         #ffffff;      /* Цвет текста выбранного канала (Имеется ввиду чата или голосового канала) */
+  --background-modifier-accent: #fff2;        /* Цвет полосы между сообщениями, участниками */
+}
