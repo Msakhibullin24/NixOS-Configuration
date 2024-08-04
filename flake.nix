@@ -21,34 +21,50 @@
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = { nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
-      overlay-unstable = final: prev: {
-        unstable = import nixpkgs-unstable {
-          inherit system;
-	  config.allowUnfree = true;
-	};
-      };
-      module-unstable = ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; });
     in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
+      specialArgs = {
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+
+        pkgs-unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        inherit inputs system;
+      };
+
       modules = [
-	module-unstable
         ./nixos/configuration.nix
         inputs.nixvim.nixosModules.nixvim
-	inputs.sddm-sugar-candy-nix.nixosModules.default
+        inputs.sddm-sugar-candy-nix.nixosModules.default
+        inputs.catppuccin.nixosModules.catppuccin
       ];
     };
 
     homeConfigurations.darkangel = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
+      extraSpecialArgs.pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
       modules = [
-        module-unstable
         ./home-manager/home.nix
+        inputs.catppuccin.homeManagerModules.catppuccin
       ];
     };
   };

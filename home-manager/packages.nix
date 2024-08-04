@@ -1,9 +1,5 @@
-{ pkgs, ... }: {
-  nixpkgs.config.allowUnfree = true;
-  home.packages = with pkgs; [
-    # Custom scripts
-    (writeShellScriptBin "toggletouchpad" (builtins.readFile ./scripts/toggletouchpad))
-    (writeShellScriptBin "powermenu" (builtins.readFile ./scripts/powermenu))
+{ pkgs, pkgs-unstable, ... }: {
+  home.packages = (with pkgs; [
     # Desktop apps
     alacritty
     firefox
@@ -12,7 +8,6 @@
     keepassxc
     qbittorrent
     krita
-    unstable.aseprite
     # Coding stuff
     # CLI utils
     cava
@@ -34,7 +29,18 @@
         gnome3.adwaita-icon-theme
       ];
     })
-    unstable.osu-lazer-bin
+    terraria-server
     # Other
-  ];
+  ])
+  ++
+  (with pkgs-unstable; [
+    # Desktop apps
+    aseprite
+    # Coding stuff
+    # CLI utils
+    # GUI utils
+    # Games
+    osu-lazer-bin
+    # Other
+  ]);
 }

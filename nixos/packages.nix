@@ -2,10 +2,16 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Desktop apps
+    alacritty
     # Coding stuff
     clang
     gdb
+    lldb
+    vscode-extensions.vadimcn.vscode-lldb
+    llvm
     # CLI utils
+    bash
+    zsh
     nix-index
     ntfs3g
     doas
@@ -19,6 +25,8 @@
     swww
     zip
     unzip
+    rar
+    unrar
     ripgrep
     # GUI utils
     feh
@@ -30,6 +38,7 @@
     # WMs and stuff
     xdg-desktop-portal-hyprland
     hyprland
+    hyprlock
     waybar
     wofi
     gtk3

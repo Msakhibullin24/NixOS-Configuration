@@ -95,25 +95,28 @@
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-	      "toggletouchpad"
+	      "toggle-touchpad"
       ];
 
       bind = [
         "$mod, Return, exec, alacritty"
 
+        "$mod SHIFT, E, exec, alacritty -e nvim"
+        "$mod SHIFT, R, exec, alacritty -e ranger"
 	      "$mod SHIFT, W, exec, firefox"
 	      "$mod SHIFT, T, exec, telegram-desktop"
 	      "$mod SHIFT, V, exec, vesktop"
 
         "$mod, D, exec, pkill wofi || wofi --show drun"
-	      "$mod, X, exec, pkill wofi || powermenu"
+	      "$mod, X, exec, pkill wofi || power-menu"
         "$mod, V, exec, pkill wofi || cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
+        "$mod, L, exec, hyprlock"
         "$mod, C, killactive,"
         "$mod, Q, exit,"
 
-	      "$mod, F, fullscreen"
         "$mod, Space, togglefloating,"
+	      "$mod, F, fullscreen,"
         "$mod, P, pseudo, # dwindle"
         "$mod, J, togglesplit, # dwindle"
 
@@ -165,7 +168,7 @@
         ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
         ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
 
-	      "$mod CONTROL, XF86TouchpadToggle, exec, toggletouchpad"
+	      "$mod CONTROL, XF86TouchpadToggle, exec, toggle-touchpad"
 
         '', Print, exec, grim -g "$(slurp)" - | swappy -f -''
 

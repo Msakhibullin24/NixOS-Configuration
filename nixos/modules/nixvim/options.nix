@@ -24,7 +24,7 @@
       cursorline = false;
       cursorcolumn = false;
       signcolumn = "yes";
-      # colorcolumn = "100";
+      colorcolumn = "100";
       laststatus = 3;
       fileencoding = "utf-8";
       termguicolors = false;

@@ -3,6 +3,7 @@
     ./zsh.nix
     ./bash.nix
     ./modules/bundle.nix
+    ./scripts/scripts.nix
     ./packages.nix
   ];
 

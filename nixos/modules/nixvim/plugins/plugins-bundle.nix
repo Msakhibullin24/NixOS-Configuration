@@ -6,6 +6,7 @@
     ./cmp.nix
     ./colorizer.nix
     ./comment.nix
+    ./dap.nix
     ./lsp.nix
     ./lualine.nix
     ./luasnip.nix

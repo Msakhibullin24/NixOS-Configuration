@@ -7,7 +7,7 @@
 
     shellAliases =
       let
-        flakeDir = "~/nix";
+        flakeDir = "$HOME/nix";
       in {
       upd = "nix flake update path:${flakeDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake path:${flakeDir}";
@@ -22,7 +22,7 @@
 
       ll = "ls -l";
       v = "nvim";
-      se = "sudo nvim";
+      de = "doas nvim";
       nf = "neofetch";
     };
 

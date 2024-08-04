@@ -18,7 +18,7 @@
 
       ll = "ls -l";
       v = "nvim";
-      se = "sudo nvim";
+      de = "doas nvim";
       nf = "neofetch";
     };
   };

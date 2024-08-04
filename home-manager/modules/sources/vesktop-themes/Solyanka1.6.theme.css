@@ -1,0 +1,59 @@
+/**
+* @name Solyanka1.6
+* @version 1.6
+* @description Спасибо что установили нашу тему, не забывайте оставлять отзывы.
+* @author Kopkoplimon
+* @authorId 777115234229420033
+* @invite 5uQz2DC
+* @source https://vsthemes.org/user/kopkoplimon/
+* @donate https://www.donationalerts.com/r/kopkoplimon
+*/
+@import url("https://discordstyles.github.io/FrostedGlass/dist/FrostedGlass.css");
+@import url('https://discordstyles.github.io/RadialStatus/dist/RadialStatus.css');
+@import url('https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css');
+:root {
+--background-image: url('https://i.imgur.com/eWZa07D.jpg');
+--background-image-blur: 0px;
+--background-image-size: cover;
+--background-image-position: center;
+--popout-modal-image: url('https://i.imgur.com/RK9R1eq.jpg');
+--popout-modal-blur: 10px;
+--popout-modal-size: cover;
+--popout-modal-position: center;
+--home-button-image: url('https://i.imgur.com/Tkj42MF.png');
+--home-button-size: cover;
+--home-button-position: center;
+--serverlist-brightness: 0.24;
+--left-brightness: 0.85;
+--middle-brightness: 0.24;
+--right-brightness: 0.75;
+--popout-modal-brightness: 0;
+--gradient-primary: 33,60,97; 
+--gradient-secondary: 0,188,211;
+--gradient-direction: 185deg;
+--tint-colour: 255,51,159;
+--tint-brightness: 0;
+--window-padding: 13px;
+--window-roundness: 25px;
+--scrollbar-colour: #ffffff0d;
+--link-colour: #00b0f4;
+--show-gift-gif-buttons: no-repeat;
+--font: 'Whitney';
+--update-notice-1: none;
+--HSL-server-icon-size: 40px;
+--HSL-server-spacing: 10px;
+--rs-small-spacing: 1px;
+--rs-medium-spacing: 1px;
+--rs-large-spacing: 4px;
+--rs-small-width: 2px;
+--rs-medium-width: 4px;
+--rs-large-width: 4px;
+--rs-avatar-shape: 50%;
+--rs-online-color: #43b581;
+--rs-idle-color: #faa61a;
+--rs-dnd-color: #f04747;
+--rs-offline-color: #636b75;
+--rs-streaming-color: #643da7;
+--rs-invisible-color: #747f8d;
+--rs-phone-visible: block;
+}
