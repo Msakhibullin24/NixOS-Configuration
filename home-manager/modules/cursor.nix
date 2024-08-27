@@ -1,8 +1,8 @@
 { pkgs, ...}: {
   home = {
     pointerCursor = {
-      package = pkgs.vimix-cursor-theme;
-      name = "Vimix-Cursors-White";
+      package = pkgs.catppuccin-cursors.latteRed;
+      name = "catppuccin-latte-red-cursors";
       size = 24;
       gtk.enable = true;
       x11 = {

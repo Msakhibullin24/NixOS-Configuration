@@ -14,6 +14,9 @@
             element = "console";
           };
         };
+        dap-python = {
+          enable = true;
+        };
         dap-virtual-text.enable = true;
       };
 
@@ -26,6 +29,10 @@
               args = [ "--port" "\${port}" ];
             };
           };
+          godot = {
+            host = "127.0.0.1";
+            port = 6006;
+          };
         };
 
         executables = {};
@@ -35,8 +42,8 @@
         cpp = [
           {
             name = "Launch via codelldb";
-            request = "launch";
             type = "codelldb";
+            request = "launch";
             program.__raw = ''
               function()
                 return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. '/', 'file')
@@ -47,6 +54,15 @@
             runInTerminal = true;
             terminal = "integrated";
             args = {};
+          }
+        ];
+        gdscript = [
+          {
+            name = "Launch scene";
+            type = "godot";
+            request = "launch";
+            project = "\${workspaceFolder}";
+            launch_scene = true;
           }
         ];
       };

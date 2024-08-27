@@ -6,6 +6,7 @@
     };
 
     opts = {
+      timeoutlen = 500;
       updatetime = 100;
       relativenumber = true;
       number = true;

@@ -3,7 +3,7 @@
     enable = true;
 
     settings = {
-      opleader.line = "gcc";
+      opleader.line = "gc";
       toggler.line = "gcc";
     };
   };

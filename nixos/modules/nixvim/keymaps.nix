@@ -18,7 +18,6 @@
           "<leader>e" = ":Neotree toggle<CR>";
           "<leader>w" = ":w<CR>";
           "<leader>q" = ":qa<CR>";
-          "<leader>c" = ":BufferClose<CR>";
           "<leader>a" = ":Alpha<CR>";
           "<leader>tf" = ":ToggleTerm direction=float<CR>";
           "<leader>th" = ":ToggleTerm size=10 direction=horizontal<CR>";

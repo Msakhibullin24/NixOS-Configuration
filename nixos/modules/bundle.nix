@@ -3,20 +3,20 @@
     ./nixvim/nixvim.nix
     ./sddm/sddm.nix
 
+    ./bluetooth.nix
     ./bootloader.nix
     ./catppuccin.nix
-    ./bluetooth.nix
-    ./hyprland.nix
-    ./firewall.nix
     ./console.nix
-    ./xserver.nix
-    ./sound.nix
-    ./steam.nix
     ./doas.nix
-    ./user.nix
-    ./ssh.nix
     ./env.nix
+    ./hyprland.nix
+    ./networking.nix
+    ./sound.nix
+    ./ssh.nix
+    ./steam.nix
+    ./users.nix
+    ./virtmanager.nix
     ./xdg.nix
-    ./nm.nix
+    ./xserver.nix
   ];
 }

@@ -18,7 +18,7 @@
       label = [
         {
           text = ''cmd[update:30000] echo "$(date +"%R")"'';
-          color = "rgb(fbdce4)";
+          color = "rgb(f397b0)";
           font_size = 90;
           font_family = "JetBrains Mono";
           position = "-30, 0";
@@ -27,7 +27,7 @@
         }
         {
           text = ''cmd[update:43200000] echo "$(date +"%A, %d %B %Y")"'';
-          color = "rgb(fbdce4)";
+          color = "rgb(f397b0)";
           font_size = 25;
           font_family = "JetBrains Mono";
           position = "-30, -150";
@@ -42,7 +42,7 @@
           position = "0, 75";
           halign = "center";
           valign = "center";
-          border_color = "rgb(f2a0a0)";
+          border_color = "rgb(f397b0)";
         }
       ];
 

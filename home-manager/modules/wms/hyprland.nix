@@ -6,7 +6,7 @@
     settings = {
       "$mod" = "SUPER";
 
-      monitor = ",1920x1080@90,auto,1";
+      monitor = ",1920x1080@60,auto,1";
 
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -50,7 +50,7 @@
 
         blur = {
           enabled = true;
-          size = 16;
+          size = 4;
           passes = 2;
           new_optimizations = true;
         };
@@ -60,7 +60,7 @@
         shadow_render_power = 3;
 
         dim_inactive = false;
-	dim_strength = 0.4;
+        dim_strength = 0.07;
       };
 
       animations = {
@@ -84,14 +84,20 @@
       };
 
       dwindle = {
+        pseudotile = true;
         preserve_split = true;
       };
 
+      master = {
+        new_status = true;
+      };
+
       windowrule = [
+        "float, ^(feh)$"
       ];
 
       exec-once = [
-        "swww init"
+        "wallpaper-init"
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
@@ -102,14 +108,14 @@
         "$mod, Return, exec, alacritty"
 
         "$mod SHIFT, E, exec, alacritty -e nvim"
-        "$mod SHIFT, R, exec, alacritty -e ranger"
+        "$mod SHIFT, F, exec, alacritty -e ranger"
 	      "$mod SHIFT, W, exec, firefox"
-	      "$mod SHIFT, T, exec, telegram-desktop"
 	      "$mod SHIFT, V, exec, vesktop"
+	      "$mod SHIFT, T, exec, telegram-desktop"
 
-        "$mod, D, exec, pkill wofi || wofi --show drun"
-	      "$mod, X, exec, pkill wofi || power-menu"
-        "$mod, V, exec, pkill wofi || cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+        "$mod, D, exec, rofi -show drun"
+	      "$mod, X, exec, rofi -show power-menu -modi power-menu:rofi-power-menu"
+        "$mod, V, exec, cliphist list | rofi -dmenu -p 'clipboard' | cliphist decode | wl-copy"
 
         "$mod, L, exec, hyprlock"
         "$mod, C, killactive,"
@@ -170,7 +176,8 @@
 
 	      "$mod CONTROL, XF86TouchpadToggle, exec, toggle-touchpad"
 
-        '', Print, exec, grim -g "$(slurp)" - | swappy -f -''
+        '', Print, exec, grim - | swappy -f -''
+        ''$mod, Print, exec, grim -g "$(slurp)" - | swappy -f -''
 
         "$mod, B, exec, pkill -SIGUSR1 waybar"
         "$mod, W, exec, pkill -SIGUSR2 waybar"

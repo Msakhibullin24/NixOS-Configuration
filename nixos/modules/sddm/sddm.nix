@@ -4,7 +4,7 @@
     autoNumlock = true;
     settings = {
       Theme = {
-        CursorTheme = "Vimix-Cursors-White";
+        CursorTheme = "catppuccin-latte-red-cursors";
       };
     };
     sugarCandyNix = {

@@ -1,14 +1,16 @@
-{ pkgs, ... }: {
-  nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
+{ pkgs, pkgs-unstable, ... }: {
+  environment.systemPackages = (with pkgs; [
     # Desktop apps
-    alacritty
     # Coding stuff
+      # C++
+    opencv
     clang
     gdb
-    lldb
     vscode-extensions.vadimcn.vscode-lldb
-    llvm
+      # Python
+    (python3.withPackages (ps: with ps; [
+      debugpy
+    ]))
     # CLI utils
     bash
     zsh
@@ -22,14 +24,8 @@
     wget
     git
     brightnessctl
-    swww
-    zip
-    unzip
-    rar
-    unrar
     ripgrep
     # GUI utils
-    feh
     # Xorg stuff
     # Wayland stuff
     xwayland
@@ -39,9 +35,8 @@
     xdg-desktop-portal-hyprland
     hyprland
     hyprlock
+    hypridle
     waybar
-    wofi
-    gtk3
     # Sound
     pipewire
     alsa-lib
@@ -57,8 +52,18 @@
     swappy
     # Other
     home-manager
+    gnome.adwaita-icon-theme
     vimix-cursor-theme
-  ];
+    catppuccin-cursors.latteRed
+    catppuccin-papirus-folders
+  ]) ++ (with pkgs-unstable; [
+    # Desktop apps
+    # Coding stuff
+    # CLI utils
+    # GUI utils
+    # Games
+    # Other
+  ]);
 
   fonts.packages = with pkgs; [
     jetbrains-mono

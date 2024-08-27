@@ -22,6 +22,7 @@
 
       ll = "ls -l";
       v = "nvim";
+      vg = "nvim --listen ./godothost";
       de = "doas nvim";
       nf = "neofetch";
     };

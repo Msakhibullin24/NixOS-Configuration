@@ -52,5 +52,6 @@
     cmp-path.enable = true;
     cmp_luasnip.enable = true;
     cmp-cmdline.enable = true;
+    cmp-dap.enable = true;
   };
 }

@@ -43,6 +43,8 @@
         nil-ls.enable = true;
         nixd.enable = true;
         clangd.enable = true;
+        gdscript.enable = true;
+        pyright.enable = true;
       };
     };
   };

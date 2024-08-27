@@ -8,7 +8,13 @@
     keepassxc
     qbittorrent
     krita
-    # Coding stuff
+    blender
+    obs-studio
+    tor-browser
+    godot_4
+    # Network stuff
+    obfs4
+    privoxy
     # CLI utils
     cava
     neofetch
@@ -16,8 +22,20 @@
     gdu
     ranger
     kalker
+    cmatrix
+    zip
+    unzip
+    rar
+    p7zip
+    swww
+    mpvpaper
+    socat
     # GUI utils
+    mpv
+    feh
     ueberzugpp
+    rofi-wayland
+    rofi-power-menu
     # Games
     gamemode
     gamescope
@@ -26,7 +44,7 @@
     (lutris.override {
       extraPkgs = pkgs: [
         wine
-        gnome3.adwaita-icon-theme
+        kdialog
       ];
     })
     terraria-server
@@ -38,6 +56,7 @@
     aseprite
     # Coding stuff
     # CLI utils
+    ueviewer
     # GUI utils
     # Games
     osu-lazer-bin
