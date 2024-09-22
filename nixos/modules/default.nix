@@ -1,7 +1,7 @@
 {
   imports = [
-    ./nixvim/nixvim.nix
-    ./sddm/sddm.nix
+    ./nixvim
+    ./sddm
 
     ./bluetooth.nix
     ./bootloader.nix
@@ -15,6 +15,7 @@
     ./ssh.nix
     ./steam.nix
     ./users.nix
+    ./video.nix
     ./virtmanager.nix
     ./xdg.nix
     ./xserver.nix

@@ -1,10 +1,10 @@
 {
   imports = [
-    ./zsh.nix
+    ./modules
+    ./scripts
     ./bash.nix
-    ./modules/bundle.nix
-    ./scripts/scripts.nix
     ./packages.nix
+    ./zsh.nix
   ];
 
   home = {

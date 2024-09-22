@@ -7,8 +7,8 @@
     users.darkangel = {
       isNormalUser = true;
       description = "DarkAngel";
-      extraGroups = [ "networkmanager" "wheel" "input" "dialout" ];
-      packages = with pkgs; [];
+      extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" ];
+      # packages = with pkgs; [];
     };
   };
 }

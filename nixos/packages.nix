@@ -10,6 +10,7 @@
       # Python
     (python3.withPackages (ps: with ps; [
       debugpy
+      selenium
     ]))
     # CLI utils
     bash
@@ -33,6 +34,7 @@
     cliphist
     # WMs and stuff
     xdg-desktop-portal-hyprland
+    seatd
     hyprland
     hyprlock
     hypridle
@@ -56,10 +58,13 @@
     vimix-cursor-theme
     catppuccin-cursors.latteRed
     catppuccin-papirus-folders
-  ]) ++ (with pkgs-unstable; [
+  ])
+  ++
+  (with pkgs-unstable; [
     # Desktop apps
     # Coding stuff
     # CLI utils
+    spoofdpi
     # GUI utils
     # Games
     # Other

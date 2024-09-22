@@ -28,16 +28,27 @@
   outputs = { nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
+      unstable-overlay = final: prev: {
+        unstable = import nixpkgs-unstable {
+          inherit system;
+          overlays = overlays;
+          config.allowUnfree = true;
+        };
+      };
+      pkgs-overlay = import ./pkgs;
+      overlays = [ pkgs-overlay ];
     in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {
         pkgs = import nixpkgs {
           inherit system;
+          overlays = overlays ++ [ unstable-overlay ];
           config.allowUnfree = true;
         };
 
         pkgs-unstable = import nixpkgs-unstable {
           inherit system;
+          inherit overlays;
           config.allowUnfree = true;
         };
         inherit inputs system;
@@ -54,11 +65,13 @@
     homeConfigurations.darkangel = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs {
         inherit system;
+        overlays = overlays ++ [ unstable-overlay ];
         config.allowUnfree = true;
       };
 
       extraSpecialArgs.pkgs-unstable = import nixpkgs-unstable {
         inherit system;
+        inherit overlays;
         config.allowUnfree = true;
       };
 

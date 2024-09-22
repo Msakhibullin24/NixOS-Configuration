@@ -4,7 +4,7 @@
       enable = true;
       nixvimInjections = true;
       folding = true;
-      indent = true;
+      indent = false;
     };
 
     treesitter-refactor = {
@@ -41,10 +41,15 @@
       enable = true;
       servers = {
         nil-ls.enable = true;
+        emmet-ls.enable = true;
         nixd.enable = true;
         clangd.enable = true;
         gdscript.enable = true;
         pyright.enable = true;
+        html.enable = true;
+        cssls.enable = true;
+        tailwindcss.enable = true;
+        tsserver.enable = true;
       };
     };
   };

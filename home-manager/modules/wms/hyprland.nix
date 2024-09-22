@@ -34,7 +34,7 @@
           natural_scroll = false;
         };
 
-        sensitivity = 0;
+        sensitivity = -0.4;
       };
 
       general = {
@@ -92,16 +92,17 @@
         new_status = true;
       };
 
-      windowrule = [
-        "float, ^(feh)$"
+      windowrulev2 = [
+        "float, class:^(feh)$"
       ];
 
       exec-once = [
-        "wallpaper-init"
         "waybar"
+        "wallpaper-init"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
 	      "toggle-touchpad"
+        "spoofdpi"
       ];
 
       bind = [

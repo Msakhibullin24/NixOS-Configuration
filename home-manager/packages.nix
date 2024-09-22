@@ -10,10 +10,10 @@
     krita
     blender
     obs-studio
-    tor-browser
     godot_4
+    ani-cli
+    anilibria-cli
     # Network stuff
-    obfs4
     privoxy
     # CLI utils
     cava
@@ -56,7 +56,6 @@
     aseprite
     # Coding stuff
     # CLI utils
-    ueviewer
     # GUI utils
     # Games
     osu-lazer-bin

@@ -1,10 +1,7 @@
 {
   imports = [
-    ./sources/sources.nix
-    ./wms/hypridle.nix
-    ./wms/hyprland.nix
-    ./wms/hyprlock.nix
-    ./wms/waybar.nix
+    ./sources
+    ./wms
 
     ./alacritty.nix
     ./btop.nix
