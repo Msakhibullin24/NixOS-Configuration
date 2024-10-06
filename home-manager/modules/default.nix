@@ -9,8 +9,9 @@
     ./cava.nix
     ./cursor.nix
     ./env.nix
+    ./foot.nix
     ./git.nix
     ./icons.nix
-    ./ranger.nix
+    ./yazi.nix
   ];
 }

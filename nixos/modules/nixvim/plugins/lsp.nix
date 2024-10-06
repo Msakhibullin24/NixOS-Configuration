@@ -47,9 +47,11 @@
         gdscript.enable = true;
         pyright.enable = true;
         html.enable = true;
+        htmx.enable = true;
         cssls.enable = true;
         tailwindcss.enable = true;
         tsserver.enable = true;
+        jsonls.enable = true;
       };
     };
   };

@@ -2,7 +2,7 @@
   home.packages = (with pkgs; [
     # Desktop apps
     alacritty
-    firefox
+    firefox-wayland
     telegram-desktop
     vesktop
     keepassxc
@@ -13,14 +13,17 @@
     godot_4
     ani-cli
     anilibria-cli
+    rustdesk
     # Network stuff
     privoxy
+    # Coding stuff
+    nodejs
     # CLI utils
     cava
     neofetch
     btop
     gdu
-    ranger
+    yazi
     kalker
     cmatrix
     zip
@@ -30,10 +33,12 @@
     swww
     mpvpaper
     socat
+    zerotierone
+    zsh-powerlevel10k
     # GUI utils
     mpv
     feh
-    ueberzugpp
+    ueberzug
     rofi-wayland
     rofi-power-menu
     # Games
@@ -48,6 +53,15 @@
       ];
     })
     terraria-server
+    # Pentesting
+    openvpn
+    rustscan
+    nmap
+    ngrok
+    android-tools
+    thc-hydra
+    wordlists
+    crunch
     # Other
   ])
   ++
@@ -59,6 +73,7 @@
     # GUI utils
     # Games
     osu-lazer-bin
+    # Pentesting
     # Other
   ]);
 }

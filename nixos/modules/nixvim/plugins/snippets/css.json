@@ -80,7 +80,7 @@
       "}",
       "",
       "button,",
-      "input[type="submit"] {",
+      "input[type=\"submit\"] {",
       "  display: inline-block;",
       "  box-shadow: none;",
       "  background-color: transparent;",

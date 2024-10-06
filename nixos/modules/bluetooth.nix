@@ -5,8 +5,12 @@
     settings = {
       General = {
         Enable = "Source,Sink,Media,Socket";
-        Experimental = true;
+        ControllerMode = "dual";
+        FastConnectable = "true";
+        Experimental = "true";
       };
+      Policy = { AutoEnable = "true"; };
+      LE = { EnableAdvMonInterleaveScan = "true"; };
     };
   };
 

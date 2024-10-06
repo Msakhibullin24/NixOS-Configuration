@@ -11,12 +11,9 @@
         modules-center = [ "hyprland/window" ];
         modules-right = [ "network" "pulseaudio" "backlight" "battery" "tray" ];
 
-        "hyprland/workspaces" = {
-          disable-scroll = true;
-          format = "󰄯";
-          # persistent-workspaces = {
-          #   "*" = [ 1 2 3 4 5 6 7 8 9 10 ];
-          # };
+        "clock" = {
+          format = "{:%H:%M} 󰥔";
+          format-alt = "{:%d.%m.%Y} 󰥔";
         };
 
         "hyprland/language" = {
@@ -41,11 +38,6 @@
             locked = "";
             unlocked = "";
           };
-        };
-
-        "clock" = {
-          format = "{:%H:%M} 󰥔";
-          format-alt = "{:%d.%m.%Y} 󰥔";
         };
 
         "hyprland/window" = {
@@ -97,6 +89,14 @@
           format = "󰈆";
           tooltip = false;
           on-click = "hyprctl dispatch exit";
+        };
+
+        "hyprland/workspaces" = {
+          disable-scroll = true;
+          format = "󰄯";
+          # persistent-workspaces = {
+          #   "*" = [ 1 2 3 4 5 6 7 8 9 10 ];
+          # };
         };
 
         "network" = {
@@ -158,15 +158,14 @@
       };
     };
   
-    style = ''
+    style = 
+      ''
 * {
   border: none;
   border-radius: 0;
   font-family: JetBrains Mono;
-  font-size: 14px;
-  font-weight: bold;
+  font-weight: bold; 
   min-height: 17.5px;
-  transition: none;
 }
 
 window#waybar {
@@ -180,16 +179,20 @@ window#waybar.hidden {
 #workspaces {
   margin-right: 8px;
   border-radius: 14px;
+  transition: none;
   background: @base;
 }
 
 #workspaces button {
   padding: 8px;
+  font-size: 14px;
+  transition: none;
   color: @lavender;
   background: transparent;
 }
 
 #workspaces button.persistent {
+  font-size: 14px;
   color: @lavender;
 }
 
@@ -197,7 +200,7 @@ window#waybar.hidden {
   box-shadow: inherit;
   text-shadow: inherit;
   border-radius: inherit;
-  transition: background 0.2s, color 0.2s;
+  transition: none;
   color: @base;
   background: @lavender;
 }
@@ -211,14 +214,16 @@ window#waybar.hidden {
 #language {
   padding-left: 16px;
   padding-right: 8px;
-  border-radius: 14px 0 0 14px;
+  border-radius: 14px 0px 0px 14px;
+  transition: none;
   color: @flamingo;
   background: @base;
 }
 
 #custom-touchpad {
-  padding-left: 0;
+  padding-left: 0px;
   padding-right: 16px;
+  transition: none;
   color: @pink;
   background: @base;
 }
@@ -226,7 +231,8 @@ window#waybar.hidden {
 #keyboard-state {
   margin-right: 8px;
   padding-right: 16px;
-  border-radius: 0 14px 14px 0;
+  border-radius: 0px 14px 14px 0px;
+  transition: none;
   color: @mauve;
   background: @base;
 }
@@ -236,8 +242,38 @@ window#waybar.hidden {
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 14px;
+  transition: none;
   color: @lavender;
   background: @base;
+}
+
+#group-power {
+  padding: 0 0;
+  border-radius: 14px;
+  color: red;
+  background: @base;
+}
+
+#custom-power,
+#custom-reboot,
+#custom-suspend,
+#custom-lock,
+#custom-quit {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+#custom-power:hover,
+#custom-reboot:hover,
+#custom-suspend:hover,
+#custom-lock:hover,
+#custom-quit:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  border-radius: 13px;
+  transition: none;
+  color: @base;
+  background: @red;
 }
 
 #window {
@@ -245,12 +281,13 @@ window#waybar.hidden {
   padding-right: 16px;
   padding-left: 16px;
   border-radius: 14px;
+  transition: none;
   color: @rosewater;
   background: @base;
 }
 
 window#waybar.empty #window {
-  background: transparent;
+  background-color: transparent;
 }
 
 #network {
@@ -266,6 +303,7 @@ window#waybar.empty #window {
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 14px;
+  transition: none;
   color: @red;
   background: @base;
 }
@@ -280,6 +318,7 @@ window#waybar.empty #window {
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 14px;
+  transition: none;
   color: @yellow;
   background: @base;
 }
@@ -289,6 +328,7 @@ window#waybar.empty #window {
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 14px;
+  transition: none;
   color: @green;
   background: @base;
 }
@@ -298,6 +338,11 @@ window#waybar.empty #window {
   background-color: @teal;
 }
 
+#battery.warning:not(.charging) {
+  color: @base;
+  background-color: @peach;
+}
+
 #battery.critical:not(.charging) {
   animation-name: blink;
   animation-duration: 0.5s;
@@ -305,7 +350,7 @@ window#waybar.empty #window {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   color: @base;
-  background-color: @maroon;
+  background-color: maroon;
 }
 
 #tray {
@@ -313,6 +358,7 @@ window#waybar.empty #window {
   padding-left: 16px;
   padding-right: 16px;
   border-radius: 14px;
+  transition: none;
   color: @text;
   background: @base;
 }

@@ -3,7 +3,7 @@
     enable = true;
 
     settings = {
-      window.opacity = 0.86;
+      window.opacity = 0.92;
 
       font = {
         size = 11.0;

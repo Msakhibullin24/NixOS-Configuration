@@ -1,7 +1,11 @@
-{
+{ pkgs, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+
+    plugins = with pkgs.hyprlandPlugins; [
+      hy3
+    ];
 
     settings = {
       "$mod" = "SUPER";
@@ -46,7 +50,7 @@
       };
 
       decoration = {
-        rounding = 5;
+        rounding = 8;
 
         blur = {
           enabled = true;
@@ -65,6 +69,27 @@
 
       animations = {
         enabled = true;
+
+        bezier = [
+          "md3_standard, 0.2, 0, 0, 1"
+          "md3_decel, 0.05, 0.7, 0.1, 1"
+          "md3_accel, 0.3, 0, 0.8, 0.15"
+          "overshot, 0.05, 0.9, 0.1, 1.1"
+          "crazyshot, 0.1, 1.5, 0.76, 0.92 "
+          "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
+          "fluent_decel, 0.1, 1, 0, 1"
+          "easeInOutCirc, 0.85, 0, 0.15, 1"
+          "easeOutCirc, 0, 0.55, 0.45, 1"
+        ];
+
+        animation = [
+          "windows, 1, 3, overshot, popin 60%"
+          "border, 1, 10, default"
+          "fade, 1, 2, default"
+          "workspaces, 1, 4.5, md3_decel, slidefade 15%"
+          # "workspaces, 1, 3.5, overshot, slide"
+          "specialWorkspace, 1, 3, md3_decel, slidevert"
+        ];
       };
 
       gestures = {
@@ -106,10 +131,9 @@
       ];
 
       bind = [
-        "$mod, Return, exec, alacritty"
+        # "$mod, Return, exec, alacritty"
+        "$mod, Return, exec, foot"
 
-        "$mod SHIFT, E, exec, alacritty -e nvim"
-        "$mod SHIFT, F, exec, alacritty -e ranger"
 	      "$mod SHIFT, W, exec, firefox"
 	      "$mod SHIFT, V, exec, vesktop"
 	      "$mod SHIFT, T, exec, telegram-desktop"
@@ -118,29 +142,29 @@
 	      "$mod, X, exec, rofi -show power-menu -modi power-menu:rofi-power-menu"
         "$mod, V, exec, cliphist list | rofi -dmenu -p 'clipboard' | cliphist decode | wl-copy"
 
-        "$mod, L, exec, hyprlock"
+        "CTRL ALT, L, exec, hyprlock"
         "$mod, C, killactive,"
         "$mod, Q, exit,"
 
-        "$mod, Space, togglefloating,"
+        "$mod, T, togglefloating,"
 	      "$mod, F, fullscreen,"
         "$mod, P, pseudo, # dwindle"
-        "$mod, J, togglesplit, # dwindle"
+        "$mod, S, togglesplit, # dwindle"
 
-        "$mod, left,  movefocus, l"
-        "$mod, right, movefocus, r"
-        "$mod, up,    movefocus, u"
-        "$mod, down,  movefocus, d"
+        "$mod, H, movefocus, l"
+        "$mod, L, movefocus, r"
+        "$mod, K, movefocus, u"
+        "$mod, J, movefocus, d"
 
-        "$mod SHIFT, left,  swapwindow, l"
-        "$mod SHIFT, right, swapwindow, r"
-        "$mod SHIFT, up,    swapwindow, u"
-        "$mod SHIFT, down,  swapwindow, d"
+        "$mod SHIFT, H, swapwindow, l"
+        "$mod SHIFT, L, swapwindow, r"
+        "$mod SHIFT, K, swapwindow, u"
+        "$mod SHIFT, J, swapwindow, d"
 
-        "$mod CTRL, left,  resizeactive, -60 0"
-        "$mod CTRL, right, resizeactive,  60 0"
-        "$mod CTRL, up,    resizeactive,  0 -60"
-        "$mod CTRL, down,  resizeactive,  0  60"
+        "$mod CTRL, H, resizeactive, -60 0"
+        "$mod CTRL, L, resizeactive,  60 0"
+        "$mod CTRL, K, resizeactive,  0 -60"
+        "$mod CTRL, J, resizeactive,  0  60"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -153,16 +177,16 @@
         "$mod, 9, workspace, 9"
         "$mod, 0, workspace, 10"
 
-        "$mod SHIFT, 1, movetoworkspacesilent, 1"
-        "$mod SHIFT, 2, movetoworkspacesilent, 2"
-        "$mod SHIFT, 3, movetoworkspacesilent, 3"
-        "$mod SHIFT, 4, movetoworkspacesilent, 4"
-        "$mod SHIFT, 5, movetoworkspacesilent, 5"
-        "$mod SHIFT, 6, movetoworkspacesilent, 6"
-        "$mod SHIFT, 7, movetoworkspacesilent, 7"
-        "$mod SHIFT, 8, movetoworkspacesilent, 8"
-        "$mod SHIFT, 9, movetoworkspacesilent, 9"
-        "$mod SHIFT, 0, movetoworkspacesilent, 10"
+        "$mod SHIFT, 1, movetoworkspace, 1"
+        "$mod SHIFT, 2, movetoworkspace, 2"
+        "$mod SHIFT, 3, movetoworkspace, 3"
+        "$mod SHIFT, 4, movetoworkspace, 4"
+        "$mod SHIFT, 5, movetoworkspace, 5"
+        "$mod SHIFT, 6, movetoworkspace, 6"
+        "$mod SHIFT, 7, movetoworkspace, 7"
+        "$mod SHIFT, 8, movetoworkspace, 8"
+        "$mod SHIFT, 9, movetoworkspace, 9"
+        "$mod SHIFT, 0, movetoworkspace, 10"
 
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
@@ -175,7 +199,7 @@
         ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
         ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
 
-	      "$mod CONTROL, XF86TouchpadToggle, exec, toggle-touchpad"
+	      "$mod CTRL, XF86TouchpadToggle, exec, toggle-touchpad"
 
         '', Print, exec, grim - | swappy -f -''
         ''$mod, Print, exec, grim -g "$(slurp)" - | swappy -f -''

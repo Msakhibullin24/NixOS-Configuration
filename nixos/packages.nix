@@ -3,14 +3,12 @@
     # Desktop apps
     # Coding stuff
       # C++
-    opencv
     clang
     gdb
     vscode-extensions.vadimcn.vscode-lldb
       # Python
     (python3.withPackages (ps: with ps; [
       debugpy
-      selenium
     ]))
     # CLI utils
     bash
@@ -29,20 +27,18 @@
     # GUI utils
     # Xorg stuff
     # Wayland stuff
-    xwayland
     wl-clipboard
     cliphist
     # WMs and stuff
     xdg-desktop-portal-hyprland
     seatd
     hyprland
-    hyprlock
-    hypridle
-    waybar
     # Sound
-    pipewire
     alsa-lib
     pamixer
+    bluez
+    bluez5
+    bluez-tools
     # GPU stuff 
     amdvlk
     mesa
@@ -50,7 +46,6 @@
     grim
     grimblast
     slurp
-    flameshot
     swappy
     # Other
     home-manager
@@ -72,6 +67,7 @@
 
   fonts.packages = with pkgs; [
     jetbrains-mono
+    iosevka
     noto-fonts
     noto-fonts-emoji
     twemoji-color-font
