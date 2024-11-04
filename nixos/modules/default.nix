@@ -1,6 +1,5 @@
 {
   imports = [
-    ./nixvim
     ./sddm
 
     ./bluetooth.nix
@@ -19,5 +18,6 @@
     ./virtmanager.nix
     ./xdg.nix
     ./xserver.nix
+    ./zapret.nix
   ];
 }

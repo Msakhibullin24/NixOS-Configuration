@@ -1,4 +1,4 @@
-{
+{username, ...}: {
   imports = [
     ./modules
     ./scripts
@@ -8,8 +8,8 @@
   ];
 
   home = {
-    username = "darkangel";
-    homeDirectory = "/home/darkangel";
+    inherit username;
+    homeDirectory = "/home/${username}";
     stateVersion = "24.05";
   };
 }

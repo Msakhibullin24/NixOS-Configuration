@@ -12,7 +12,7 @@
         hide-when-typing = "yes";
       };
 
-      colors.alpha = 0.92;
+      colors.alpha = 0.67;
     };
   };
 }

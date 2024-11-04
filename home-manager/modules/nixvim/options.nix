@@ -39,11 +39,14 @@
       textwidth = 0;
       foldlevel = 99;
       showmatch = true;
-      smartindent = true;
       splitright = true;
       splitbelow = true;
       fixeol = true;
-      completeopt = [ "menu" "menuone" "noselect" ];
+      completeopt = [
+        "menu"
+        "menuone"
+        "noselect"
+      ];
     };
   };
 }

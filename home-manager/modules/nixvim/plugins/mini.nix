@@ -2,6 +2,8 @@
   programs.nixvim.plugins.mini = {
     enable = true;
 
+    mockDevIcons = true;
+
     modules = {
       align = {};
       basics = {
@@ -15,6 +17,7 @@
       trailspace = {};
       misc = {};
       surround = {};
+      icons = {};
     };
   };
 }

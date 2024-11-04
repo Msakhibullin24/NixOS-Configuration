@@ -12,7 +12,7 @@
     defaultEditor = true;
     colorschemes.catppuccin = {
       enable = true;
-      settings.flavour = "latte";
+      settings.flavour = "mocha";
     };
   };
 }

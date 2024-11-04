@@ -8,7 +8,7 @@
       {
         event = [ "FileType" ];
         pattern = [ "help" "alpha" "dashboard" "neo-tree" "toggleterm" "floatterm" ];
-        callback = { __raw = "function() vim.b.miniindentscope_disable = true end"; };
+        callback.__raw = "function() vim.b.miniindentscope_disable = true end";
       }
     ];
   };

@@ -9,7 +9,7 @@
       let
         flakeDir = "$HOME/nix";
       in {
-      upd = "nix flake update path:${flakeDir}";
+      upd = "nix flake update --flake path:${flakeDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake path:${flakeDir}";
 
       hms = "home-manager switch --flake path:${flakeDir}";

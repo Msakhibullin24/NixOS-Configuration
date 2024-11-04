@@ -1,5 +1,6 @@
 {
   imports = [
+    ./nixvim
     ./sources
     ./wms
 
@@ -11,7 +12,8 @@
     ./env.nix
     ./foot.nix
     ./git.nix
-    ./icons.nix
+    ./gtk.nix
+    ./mpv.nix
     ./yazi.nix
   ];
 }

@@ -1,15 +1,5 @@
-{ pkgs, pkgs-unstable, ... }: {
-  environment.systemPackages = (with pkgs; [
-    # Desktop apps
-    # Coding stuff
-      # C++
-    clang
-    gdb
-    vscode-extensions.vadimcn.vscode-lldb
-      # Python
-    (python3.withPackages (ps: with ps; [
-      debugpy
-    ]))
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
     # CLI utils
     bash
     zsh
@@ -23,23 +13,27 @@
     wget
     git
     brightnessctl
-    ripgrep
-    # GUI utils
-    # Xorg stuff
+    zapret
     # Wayland stuff
+    xwayland
     wl-clipboard
     cliphist
     # WMs and stuff
     xdg-desktop-portal-hyprland
-    seatd
     hyprland
+    seatd
+    waybar
     # Sound
+    pipewire
+    pulseaudio
+    wireplumber
     alsa-lib
+    alsa-utils
     pamixer
     bluez
     bluez5
     bluez-tools
-    # GPU stuff 
+    # GPU stuff
     amdvlk
     mesa
     # Screenshotting
@@ -49,21 +43,11 @@
     swappy
     # Other
     home-manager
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
     vimix-cursor-theme
-    catppuccin-cursors.latteRed
-    catppuccin-papirus-folders
-  ])
-  ++
-  (with pkgs-unstable; [
-    # Desktop apps
-    # Coding stuff
-    # CLI utils
-    spoofdpi
-    # GUI utils
-    # Games
-    # Other
-  ]);
+    stable.catppuccin-cursors.mochaRosewater
+    stable.catppuccin-papirus-folders
+  ];
 
   fonts.packages = with pkgs; [
     jetbrains-mono
@@ -74,6 +58,6 @@
     font-awesome
     powerline-fonts
     powerline-symbols
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
   ];
 }

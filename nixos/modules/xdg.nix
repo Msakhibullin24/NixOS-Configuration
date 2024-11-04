@@ -2,7 +2,7 @@
   xdg = {
     terminal-exec = {
       enable = true;
-      settings.default = [ "alacritty.desktop" ];
+      settings.default = [ "foot.desktop" ];
     };
     mime = {
       defaultApplications = {

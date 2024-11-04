@@ -13,7 +13,7 @@
 
         "hyprland/workspaces" = {
           disable-scroll = true;
-          format = "󰄯";
+          format = "{icon}";
           # persistent-workspaces = {
           #   "*" = [ 1 2 3 4 5 6 7 8 9 10 ];
           # };
@@ -46,57 +46,12 @@
         "clock" = {
           format = "{:%H:%M} 󰥔";
           format-alt = "{:%d.%m.%Y} 󰥔";
+          tooltip = false;
         };
 
         "hyprland/window" = {
           format = "{title}";
-          max-length = 25;
-        };
-
-        "group/group-power" = {
-          orientation = "inherit";
-          drawer = {
-            transition-duration = 100;
-            children-class = "not-power";
-            transition-left-to-right = true;
-          };
-          modules = [
-            "custom/power"
-            "custom/reboot"
-            "custom/suspend"
-            "custom/lock"
-            "custom/quit"
-          ];
-        };
-
-        "custom/power" = {
-          format = "󰐥";
-          tooltip = false;
-          on-click = "poweroff";
-        };
-
-        "custom/reboot" = {
-          format = "󰜉";
-          tooltip = false;
-          on-click = "reboot";
-        };
-
-        "custom/suspend" = {
-          format = "󰤄";
-          tooltip = false;
-          on-click = "systemctl suspend";
-        };
-
-        "custom/lock" = {
-          format = "󰌾";
-          tooltip = false;
-          on-click = "hyprlock";
-        };
-
-        "custom/quit" = {
-          format = "󰈆";
-          tooltip = false;
-          on-click = "hyprctl dispatch exit";
+          max-length = 50;
         };
 
         "network" = {
@@ -157,172 +112,7 @@
         };
       };
     };
-  
-    style = ''
-* {
-  border: none;
-  border-radius: 0;
-  font-family: JetBrains Mono;
-  font-size: 14px;
-  font-weight: bold;
-  min-height: 17.5px;
-  transition: none;
-}
 
-window#waybar {
-  background: transparent;
-}
-
-window#waybar.hidden {
-  opacity: 0.2;
-}
-
-#workspaces {
-  margin-right: 8px;
-  border-radius: 14px;
-  background: @base;
-}
-
-#workspaces button {
-  padding: 8px;
-  color: @lavender;
-  background: transparent;
-}
-
-#workspaces button.persistent {
-  color: @lavender;
-}
-
-#workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  border-radius: inherit;
-  transition: background 0.2s, color 0.2s;
-  color: @base;
-  background: @lavender;
-}
-
-#workspaces button.active {
-  border-radius: inherit;
-  color: @maroon;
-  background: @crust;
-}
-
-#language {
-  padding-left: 16px;
-  padding-right: 8px;
-  border-radius: 14px 0 0 14px;
-  color: @flamingo;
-  background: @base;
-}
-
-#custom-touchpad {
-  padding-left: 0;
-  padding-right: 16px;
-  color: @pink;
-  background: @base;
-}
-
-#keyboard-state {
-  margin-right: 8px;
-  padding-right: 16px;
-  border-radius: 0 14px 14px 0;
-  color: @mauve;
-  background: @base;
-}
-
-#clock {
-  margin-right: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 14px;
-  color: @lavender;
-  background: @base;
-}
-
-#window {
-  margin-right: 8px;
-  padding-right: 16px;
-  padding-left: 16px;
-  border-radius: 14px;
-  color: @rosewater;
-  background: @base;
-}
-
-window#waybar.empty #window {
-  background: transparent;
-}
-
-#network {
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 14px;
-  color: @rosewater;
-  background: @base;
-}
-
-#pulseaudio {
-  margin-left: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 14px;
-  color: @red;
-  background: @base;
-}
-
-#pulseaudio.muted {
-  color: @base;
-  background-color: @flamingo;
-}
-
-#backlight {
-  margin-left: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 14px;
-  color: @yellow;
-  background: @base;
-}
-
-#battery {
-  margin-left: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 14px;
-  color: @green;
-  background: @base;
-}
-
-#battery.charging {
-  color: @base;
-  background-color: @teal;
-}
-
-#battery.critical:not(.charging) {
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  color: @base;
-  background-color: @maroon;
-}
-
-#tray {
-  margin-left: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 14px;
-  color: @text;
-  background: @base;
-}
-
-@keyframes blink {
-  to {
-    background-color: @base;
-    color: @green;
-  }
-}
-    '';
+    style = builtins.readFile ./waybar.css;
   };
 }

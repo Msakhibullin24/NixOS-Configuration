@@ -2,17 +2,17 @@
   description = "My system configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.05";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -21,37 +21,51 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ayugram-desktop.url = "github:ayugram-port/ayugram-desktop";
+
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = { nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      unstable-overlay = final: prev: {
-        unstable = import nixpkgs-unstable {
-          inherit system;
-          overlays = overlays;
-          config.allowUnfree = true;
-        };
+  outputs = {
+    nixpkgs,
+    nixpkgs-stable,
+    home-manager,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+
+    pkgs-overlay = import ./pkgs;
+    ayugram-overlay = final: prev: {
+      inherit (inputs.ayugram-desktop.packages.${system}) ayugram-desktop;
+    };
+    utillinux = final: prev: {
+      utillinux = prev.util-linux;
+    };
+
+    overlays = [
+      pkgs-overlay
+      ayugram-overlay
+      utillinux
+    ];
+
+    stable-overlay = final: prev: {
+      stable = import nixpkgs-stable {
+        inherit system overlays;
+        config.allowUnfree = true;
       };
-      pkgs-overlay = import ./pkgs;
-      overlays = [ pkgs-overlay ];
-    in {
+    };
+
+    pkgs = import nixpkgs {
+      inherit system;
+      overlays = overlays ++ [stable-overlay];
+      config.allowUnfree = true;
+    };
+
+    username = "darkangel";
+  in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = overlays ++ [ unstable-overlay ];
-          config.allowUnfree = true;
-        };
-
-        pkgs-unstable = import nixpkgs-unstable {
-          inherit system;
-          inherit overlays;
-          config.allowUnfree = true;
-        };
-
-        inherit inputs system;
+        inherit pkgs system inputs;
       };
 
       modules = [
@@ -62,21 +76,16 @@
       ];
     };
 
-    homeConfigurations.darkangel = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = overlays ++ [ unstable-overlay ];
-        config.allowUnfree = true;
-      };
+    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
 
-      extraSpecialArgs.pkgs-unstable = import nixpkgs-unstable {
-        inherit system;
-        inherit overlays;
-        config.allowUnfree = true;
+      extraSpecialArgs = {
+        inherit username;
       };
 
       modules = [
         ./home-manager/home.nix
+        inputs.nixvim.homeManagerModules.nixvim
         inputs.catppuccin.homeManagerModules.catppuccin
       ];
     };

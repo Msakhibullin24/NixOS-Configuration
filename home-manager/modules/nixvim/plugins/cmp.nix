@@ -35,15 +35,15 @@
         };
 
         sources = [
-          { name = "path"; }
-          { name = "nvim_lsp"; }
-          { name = "cmp_tabby"; }
-          { name = "luasnip"; }
+          {name = "path";}
+          {name = "nvim_lsp";}
+          {name = "cmp_tabby";}
+          {name = "luasnip";}
           {
             name = "buffer";
             option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
           }
-          { name = "neorg"; }
+          {name = "neorg";}
         ];
       };
     };

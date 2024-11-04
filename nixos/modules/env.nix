@@ -1,6 +1,6 @@
 {
   environment.variables = {
     EDITOR = "nvim";
-    TERM = "alacritty";
+    TERM = "foot";
   };
 }

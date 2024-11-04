@@ -1,10 +1,10 @@
-{ pkgs, pkgs-unstable, ... }: {
-  home.packages = (with pkgs; [
+{pkgs, ...}: {
+  home.packages = with pkgs; [
     # Desktop apps
     alacritty
     firefox-wayland
-    telegram-desktop
     vesktop
+    ayugram-desktop
     keepassxc
     qbittorrent
     krita
@@ -14,14 +14,29 @@
     ani-cli
     anilibria-cli
     rustdesk
+    aseprite
+    zoom-us
     # Network stuff
+    socat
     privoxy
+    zerotierone
+    spoofdpi
+    byedpi
     # Coding stuff
+    tgbot-cpp
+    gdb
+    vscode-extensions.vadimcn.vscode-lldb
+    (python3.withPackages (ps: with ps; [debugpy]))
+    clang
     nodejs
+    nodePackages.pnpm
+    ngrok
+    android-tools
     # CLI utils
     cava
     neofetch
     btop
+    radeontop
     gdu
     yazi
     kalker
@@ -32,48 +47,24 @@
     p7zip
     swww
     mpvpaper
-    socat
-    zerotierone
     zsh-powerlevel10k
+    ripgrep
     # GUI utils
     mpv
+    vlc
     feh
     ueberzug
     rofi-wayland
     rofi-power-menu
+    wlogout
     # Games
     gamemode
     gamescope
     mangohud
     steam
-    (lutris.override {
-      extraPkgs = pkgs: [
-        wine
-        kdialog
-      ];
-    })
+    (lutris.override {extraPkgs = pkgs: [wine kdialog];})
     terraria-server
-    # Pentesting
-    openvpn
-    rustscan
-    nmap
-    ngrok
-    android-tools
-    thc-hydra
-    wordlists
-    crunch
-    # Other
-  ])
-  ++
-  (with pkgs-unstable; [
-    # Desktop apps
-    aseprite
-    # Coding stuff
-    # CLI utils
-    # GUI utils
-    # Games
     osu-lazer-bin
-    # Pentesting
     # Other
-  ]);
+  ];
 }
