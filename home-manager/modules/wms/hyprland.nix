@@ -1,9 +1,9 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
 
-    plugins = [ pkgs.hyprlandPlugins.hyprscroller ];
+    plugins = [pkgs.hyprlandPlugins.hyprscroller];
 
     settings = {
       "$mod" = "SUPER";
@@ -32,7 +32,7 @@
 
         follow_mouse = 1;
 
-        touchpad = { natural_scroll = false; };
+        touchpad = {natural_scroll = false;};
 
         sensitivity = -0.4;
       };
@@ -112,9 +112,9 @@
         preserve_split = true;
       };
 
-      master = { new_status = true; };
+      master = {new_status = true;};
 
-      windowrulev2 = [ "float, class:^(feh)$" "float, title:^(MainPicker)$" ];
+      windowrulev2 = ["float, class:^(feh)$" "float, title:^(MainPicker)$"];
 
       exec-once = [
         "waybar"
@@ -122,22 +122,21 @@
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "toggle-touchpad"
-        "spoofdpi -port 3128 -system-proxy false"
-        "ciadpi --ip 127.0.0.1 --port 3129 -a8 -s1 -q1 -Y -At -a8 -f-1 -r1+s -As -a8 -s1 -o1"
+        "ciadpi --ip 127.0.0.1 --port 3128 -a15 -s1 -q1 -Y -At -a15 -T5 -b1000 -S -f-1 -r1+sm -As -a15"
       ];
 
       bind = [
-        # "$mod, Return, exec, alacritty"
-        "$mod, Return, exec, foot"
+        # "$mod, return, exec, alacritty"
+        "$mod, return, exec, foot"
 
-        "$mod SHIFT, W, exec, firefox"
-        ''
-          $mod SHIFT, V, exec, vesktop --proxy-server="socks5://127.0.0.1:3129"''
-        "$mod SHIFT, T, exec, ayugram-desktop"
+        "$mod shift, w, exec, firefox"
+        ''$mod shift, v, exec, vesktop --proxy-server="socks5://127.0.0.1:3128"''
+        ''$mod shift, d, exec, discord --proxy-server=" socks5://127.0.0.1:3128 "''
+        "$mod shift, t, exec, ayugram-desktop"
 
-        "$mod, D, exec, rofi -show drun"
-        "$mod, X, exec, rofi -show power-menu -modi power-menu:rofi-power-menu"
-        # "$mod, X, exec, wlogout"
+        "$mod, d, exec, rofi -show drun"
+        "$mod, x, exec, rofi -show power-menu -modi power-menu:rofi-power-menu"
+        # "$mod, x, exec, wlogout"
         "$mod, v, exec, cliphist list | rofi -dmenu -p 'clipboard' | cliphist decode | wl-copy"
 
         "$mod, c, killactive,"
@@ -239,7 +238,7 @@
         "$mod, w, exec, pkill -sigusr2 waybar"
       ];
 
-      bindm = [ "$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow" ];
+      bindm = ["$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow"];
     };
   };
 }

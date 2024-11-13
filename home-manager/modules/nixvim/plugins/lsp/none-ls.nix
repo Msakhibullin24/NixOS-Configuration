@@ -80,6 +80,7 @@
             settings.extra_args = ["--no-semi" "--single-quote"];
           };
           stylua.enable = true;
+          gdformat.enable = true;
         };
       };
     };

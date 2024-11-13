@@ -3,12 +3,12 @@
     # Desktop apps
     alacritty
     firefox-wayland
+    discord
     vesktop
     ayugram-desktop
     keepassxc
     qbittorrent
     krita
-    blender
     obs-studio
     godot_4
     ani-cli
@@ -62,7 +62,7 @@
     gamescope
     mangohud
     steam
-    (lutris.override {extraPkgs = pkgs: [wine kdialog];})
+    (lutris.override {extraPkgs = pkgs: [wine kdialog jdk];})
     terraria-server
     osu-lazer-bin
     # Other

@@ -1,10 +1,10 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   systemd.services.zapret = {
-    after = [ "network-online.target" ];
-    wants = [ "network-online.target" ];
-    wantedBy = [ "multi-user.target" ];
+    after = ["network-online.target"];
+    wants = ["network-online.target"];
+    wantedBy = ["multi-user.target"];
 
-    path = with pkgs; [ iptables nftables gawk ];
+    path = with pkgs; [iptables nftables gawk];
 
     serviceConfig = {
       Type = "forking";
@@ -34,24 +34,24 @@
 
         GZIP_LISTS=1
 
-        QUIC_PORTS=1-65535
-
-        MODE=nfqws
-        MODE_HTTP=0
-        MODE_HTTP_KEEPALIVE=0
-        MODE_HTTPS=0
-        MODE_QUIC=1
-        MODE_FILTER=none
-
         DESYNC_MARK=0x40000000
         DESYNC_MARK_POSTNAT=0x20000000
 
-        NFQWS_OPT_DESYNC_QUIC = "--dpi-desync=fake,tamper --dpi-desync-any-protocol --hostlist=${
-          ./zapret/hostlist
-        }"
-        TWPS_OPT_DESYNC_QUIC = "--dpi-desync=fake,tamper --dpi-desync-any-protocol --hostlist=${
-          ./zapret/hostlist
-        }"
+        NFQWS_ENABLE=1
+        NFQWS_PORTS_TCP=80,443
+        NFQWS_PORTS_UDP=443,50000-65535
+
+        NFQWS_TCP_PKT_OUT=$((6+$AUTOHOSTLIST_RETRANS_THRESHOLD))
+        NFQWS_TCP_PKT_IN=3
+        NFQWS_UDP_PKT_OUT=$((6+$AUTOHOSTLIST_RETRANS_THRESHOLD))
+        NFQWS_UDP_PKT_IN=0
+
+        NFQWS_OPT="--filter-udp=443,50000-65535 --dpi-desync=fake,tamper --dpi-desync-any-protocol --dpi-desync-repeats=15"
+
+        # none,ipset,hostlist,autohostlist
+        MODE_FILTER=none
+
+        FLOWOFFLOAD=donttouch
 
         INIT_APPLY_FW=1
 

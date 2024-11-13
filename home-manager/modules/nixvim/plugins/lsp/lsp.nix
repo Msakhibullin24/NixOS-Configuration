@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.nixvim.plugins = {
     lsp = {
       enable = true;
@@ -21,6 +21,14 @@
         marksman.enable = true;
         eslint.enable = true;
         emmet_ls.enable = true;
+        gdscript = {
+          enable = true;
+          package = pkgs.gdtoolkit_4;
+        };
+        gdshader_lsp = {
+          enable = true;
+          package = pkgs.gdtoolkit_4;
+        };
       };
       keymaps = {
         silent = true;

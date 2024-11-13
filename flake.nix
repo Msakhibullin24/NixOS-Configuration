@@ -89,5 +89,11 @@
         inputs.catppuccin.homeManagerModules.catppuccin
       ];
     };
+    devShells.${system} = {
+      cpp = pkgs.mkShell {
+        buildInputs = with pkgs; [boost openssl zlib curl tgbot-cpp];
+        packages = with pkgs; [clang];
+      };
+    };
   };
 }
