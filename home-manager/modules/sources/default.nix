@@ -5,7 +5,7 @@
     "mpvpaper".source = ./mpvpaper;
     "neofetch".source = ./neofetch;
     "qBittorrent/themes".source = ./qbittorrent/themes;
-    "rofi".source = ./rofi;
+    # "rofi".source = ./rofi;
     "swappy".source = ./swappy;
     "vesktop/themes".source = ./vesktop/themes;
   };

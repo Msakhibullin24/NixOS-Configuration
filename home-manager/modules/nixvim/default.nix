@@ -1,4 +1,4 @@
-{
+{flavor, ...}: {
   imports = [
     ./keymaps.nix
     ./options.nix
@@ -12,7 +12,9 @@
     defaultEditor = true;
     colorschemes.catppuccin = {
       enable = true;
-      settings.flavour = "mocha";
+      settings = {
+        inherit flavor;
+      };
     };
   };
 }

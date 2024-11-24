@@ -38,14 +38,14 @@
     ayugram-overlay = final: prev: {
       inherit (inputs.ayugram-desktop.packages.${system}) ayugram-desktop;
     };
-    utillinux = final: prev: {
+    utillinux-overlay = final: prev: {
       utillinux = prev.util-linux;
     };
 
     overlays = [
       pkgs-overlay
       ayugram-overlay
-      utillinux
+      utillinux-overlay
     ];
 
     stable-overlay = final: prev: {
@@ -62,10 +62,12 @@
     };
 
     username = "darkangel";
+
+    flavor = "mocha";
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {
-        inherit pkgs system inputs;
+        inherit pkgs system inputs flavor;
       };
 
       modules = [
@@ -80,7 +82,7 @@
       inherit pkgs;
 
       extraSpecialArgs = {
-        inherit username;
+        inherit username flavor;
       };
 
       modules = [
@@ -89,6 +91,7 @@
         inputs.catppuccin.homeManagerModules.catppuccin
       ];
     };
+
     devShells.${system} = {
       cpp = pkgs.mkShell {
         buildInputs = with pkgs; [boost openssl zlib curl tgbot-cpp];

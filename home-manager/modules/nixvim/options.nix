@@ -22,7 +22,7 @@
       ignorecase = true;
       smartcase = true;
       scrolloff = 12;
-      cursorline = false;
+      cursorline = true;
       cursorcolumn = false;
       signcolumn = "yes";
       colorcolumn = "100";

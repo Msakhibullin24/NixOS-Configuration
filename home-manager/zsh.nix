@@ -1,14 +1,17 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    shellAliases =
-      let
-        flakeDir = "$HOME/nix";
-      in {
+    shellAliases = let
+      flakeDir = "$HOME/nix";
+    in {
       upd = "nix flake update --flake path:${flakeDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake path:${flakeDir}";
 
@@ -22,7 +25,6 @@
 
       ll = "ls -l";
       v = "nvim";
-      vg = "nvim --listen ./godothost";
       de = "doas nvim";
       nf = "neofetch";
     };
@@ -45,7 +47,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = ["git"];
     };
   };
 }

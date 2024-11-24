@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     # CLI utils
     bash
@@ -50,14 +51,15 @@
   ];
 
   fonts.packages = with pkgs; [
-    jetbrains-mono
     iosevka
     noto-fonts
     noto-fonts-emoji
     twemoji-color-font
-    font-awesome
-    powerline-fonts
-    powerline-symbols
-    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
+    (nerdfonts.override {
+      fonts = [
+        "NerdFontsSymbolsOnly"
+        "JetBrainsMono"
+      ];
+    })
   ];
 }

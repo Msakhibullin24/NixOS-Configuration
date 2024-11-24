@@ -1,9 +1,10 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
 
-    plugins = [pkgs.hyprlandPlugins.hyprscroller];
+    plugins = [ pkgs.hyprlandPlugins.hyprscroller ];
 
     settings = {
       "$mod" = "SUPER";
@@ -32,13 +33,16 @@
 
         follow_mouse = 1;
 
-        touchpad = {natural_scroll = false;};
+        touchpad = {
+          natural_scroll = false;
+        };
 
         sensitivity = -0.4;
       };
 
       general = {
         gaps_in = 5;
+        # gaps_in = 0;
         gaps_out = 10;
         border_size = 1;
         # "col.active_border" = "rgba()";
@@ -49,6 +53,7 @@
 
       decoration = {
         rounding = 8;
+        # rounding = 0;
 
         blur = {
           enabled = true;
@@ -112,13 +117,22 @@
         preserve_split = true;
       };
 
-      master = {new_status = true;};
+      master = {
+        new_status = true;
+      };
 
-      windowrulev2 = ["float, class:^(feh)$" "float, title:^(MainPicker)$"];
+      windowrulev2 = [
+        "float, class:^(feh)$"
+        "float, title:^(MainPicker)$"
+      ];
+
+      layerrule = [
+        "animation popin 60%, rofi"
+      ];
 
       exec-once = [
         "waybar"
-        "wallpaper-init"
+        "swww init"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "toggle-touchpad"
@@ -126,6 +140,10 @@
       ];
 
       bind = [
+        ''$mod, r, exec, swww img $(printf "$HOME/Pictures/wallpapers/%s\n" $(ls ~/Pictures/wallpapers | grep .png | shuf -n1)) --transition-type=wipe --transition-bezier=".8,.2,.3,1"''
+        ''$mod shift, r, exec, swww img $(printf "$HOME/Pictures/****/%s\n" $(ls ~/Pictures/\*\*\*\* | grep .png | shuf -n1)) --transition-type=wipe --transition-bezier=".8,.2,.3,1"''
+        ''ctrl alt, r, exec, swww img $HOME/Pictures/****/nsfw_51.png --transition-type=wipe --transition-bezier=".8,.2,.3,1"''
+
         # "$mod, return, exec, alacritty"
         "$mod, return, exec, foot"
 
@@ -238,7 +256,10 @@
         "$mod, w, exec, pkill -sigusr2 waybar"
       ];
 
-      bindm = ["$mod, mouse:272, movewindow" "$mod, mouse:273, resizewindow"];
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
     };
   };
 }

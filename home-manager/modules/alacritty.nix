@@ -3,12 +3,12 @@
     enable = true;
 
     settings = {
-      window.opacity = 0.92;
+      window.opacity = 0.67;
 
       font = {
         size = 11.0;
         normal = {
-          family = "JetBrains Mono";
+          family = "JetBrainsMono NF";
           style = "Bold";
         };
       };

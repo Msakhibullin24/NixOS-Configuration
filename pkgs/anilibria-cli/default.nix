@@ -28,8 +28,7 @@ assert withMpv || withVlc;
     nativeBuildInputs = [makeWrapper];
     runtimeDependencies = let
       player =
-        []
-        ++ lib.optional withMpv mpv
+        lib.optional withMpv mpv
         ++ lib.optional withVlc vlc;
     in
       [jq curl ffmpeg]

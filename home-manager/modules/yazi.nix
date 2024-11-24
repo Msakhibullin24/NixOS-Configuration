@@ -3,25 +3,37 @@
     enable = true;
     catppuccin.enable = false;
 
-    theme.status = {
-      separator_open  = "";
-      separator_close = "";
-    };
-
     settings = {
       opener = {
         open = [
-          { run = ''xdg-open "$@"''; block = true; desc = "Open"; }
-          { run = ''wallpaper-set swww "$@"''; block = false; desc = "Wallpaper"; }
+          {
+            run = ''xdg-open "$@"'';
+            block = true;
+            desc = "Open";
+          }
+          {
+            run = ''swww img "$@"'';
+            block = false;
+            desc = "Wallpaper";
+          }
         ];
         play = [
-          { run = ''mpv "$@"''; orphan = true; desc = "Play"; }
-          { run = ''wallpaper-set mpvpaper-na "$@"''; orphan = true; desc = "Wallpaper"; }
+          {
+            run = ''mpv "$@"'';
+            orphan = true;
+            desc = "Play";
+          }
+          {
+            run = ''mpvpaper -f -s -o "no-audio input-ipc-server=$XDG_RUNTIME_DIR/mpv.sock --loop" '*' "$@"'';
+            orphan = true;
+            desc = "Wallpaper";
+          }
         ];
       };
       open = {
-        append_rules = [
-        ];
+        append_rules =
+          [
+          ];
       };
     };
   };

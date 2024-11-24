@@ -1,7 +1,13 @@
 {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ]; 
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
+    };
+    initrd.kernelModules = ["amdgpu"];
+    kernelParams = ["psmouse.synaptics_intertouch=0"];
+  };
 }

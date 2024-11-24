@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     # Desktop apps
     alacritty
@@ -16,6 +17,7 @@
     rustdesk
     aseprite
     zoom-us
+    gparted
     # Network stuff
     socat
     privoxy
@@ -26,7 +28,7 @@
     tgbot-cpp
     gdb
     vscode-extensions.vadimcn.vscode-lldb
-    (python3.withPackages (ps: with ps; [debugpy]))
+    (python3.withPackages (ps: with ps; [ debugpy ]))
     clang
     nodejs
     nodePackages.pnpm
@@ -54,15 +56,19 @@
     vlc
     feh
     ueberzug
-    rofi-wayland
     rofi-power-menu
-    wlogout
     # Games
     gamemode
     gamescope
     mangohud
     steam
-    (lutris.override {extraPkgs = pkgs: [wine kdialog jdk];})
+    (lutris.override {
+      extraPkgs = pkgs: [
+        wine
+        kdialog
+        jdk
+      ];
+    })
     terraria-server
     osu-lazer-bin
     # Other

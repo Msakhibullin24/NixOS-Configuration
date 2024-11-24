@@ -20,7 +20,7 @@
           text = ''cmd[update:30000] echo "$(date +"%R")"'';
           color = "rgb(a6adc8)";
           font_size = 90;
-          font_family = "JetBrains Mono";
+          font_family = "JetBrainsMono NF";
           position = "30, 0";
           halign = "left";
           valign = "top";
@@ -29,7 +29,7 @@
           text = ''cmd[update:43200000] echo "$(date +"%A, %d %B %Y")"'';
           color = "rgb(a6adc8)";
           font_size = 25;
-          font_family = "JetBrains Mono";
+          font_family = "JetBrainsMono NF";
           position = "30, -150";
           halign = "left";
           valign = "top";

@@ -1,0 +1,39 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+local o = vim.opt
+
+o.clipboard = "unnamedplus"
+
+o.timeoutlen = 500
+o.swapfile = false
+o.tabstop = 2
+o.softtabstop = 2
+o.shiftwidth = 2
+o.expandtab = true
+o.autoindent = true
+o.termguicolors = true
+o.number = true
+o.relativenumber = true
+o.cursorline = true
+o.wrap = false
+o.spell = false
+o.textwidth = 0
+o.scrolloff = 12
+o.laststatus = 3
+o.foldlevel = 99
+o.hidden = true
+o.undofile = true
+o.ignorecase = true
+o.smartcase = true
+o.incsearch = true
+o.showmatch = true
+o.splitright = true
+o.splitbelow = true
+o.fixeol = true
+o.inccommand = "split"
+o.signcolumn = "yes"
+o.fileencoding = "utf-8"
+o.mouse = ""
+o.mousemodel = "extend"
+o.completeopt = "menu,menuone,noselect"

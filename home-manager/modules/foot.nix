@@ -5,7 +5,7 @@
       main = {
         term = "foot";
 
-        font = "JetBrains Mono:style=Bold:weight=Bold:size=11.0";
+        font = "JetBrainsMono NF:style=Bold:weight=Bold:size=11.0";
       };
 
       mouse = {
