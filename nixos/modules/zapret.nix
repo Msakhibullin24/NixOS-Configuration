@@ -1,10 +1,15 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   systemd.services.zapret = {
-    after = ["network-online.target"];
-    wants = ["network-online.target"];
-    wantedBy = ["multi-user.target"];
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+    wantedBy = [ "multi-user.target" ];
 
-    path = with pkgs; [iptables nftables gawk];
+    path = with pkgs; [
+      iptables
+      nftables
+      gawk
+    ];
 
     serviceConfig = {
       Type = "forking";
@@ -46,7 +51,9 @@
         NFQWS_UDP_PKT_OUT=$((6+$AUTOHOSTLIST_RETRANS_THRESHOLD))
         NFQWS_UDP_PKT_IN=0
 
-        NFQWS_OPT="--filter-udp=443,50000-65535 --dpi-desync=fake,tamper --dpi-desync-any-protocol --dpi-desync-repeats=15"
+        NFQWS_OPT="
+        --filter-udp=443,50000-65535 --dpi-desync=fake,tamper --dpi-desync-any-protocol --dpi-desync-repeats=17
+        "
 
         # none,ipset,hostlist,autohostlist
         MODE_FILTER=none

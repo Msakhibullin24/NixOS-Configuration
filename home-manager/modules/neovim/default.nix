@@ -32,7 +32,7 @@ in
       # Formatters
       nixfmt-rfc-style
       stylua
-      astyle
+      uncrustify
       shfmt
       black
       prettierd
@@ -43,6 +43,9 @@ in
       # LSP + Formatters
       clang-tools
       gdtoolkit_4
+
+      # Debugger
+      vscode-extensions.vadimcn.vscode-lldb
     ];
 
     plugins = with pkgs.vimPlugins; [

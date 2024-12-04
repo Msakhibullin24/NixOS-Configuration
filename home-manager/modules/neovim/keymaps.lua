@@ -40,7 +40,7 @@ map("n", "<leader>lS", ":LspStart<cr>", opts)
 map("n", "<leader>lr", ":LspRestart<cr>", opts)
 
 map("n", "<leader>db", function()
-	require("dap").toggle_break()
+	require("dap").toggle_breakpoint()
 end, opts)
 map("n", "<leader>dc", function()
 	require("dap").continue()

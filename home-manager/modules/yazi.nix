@@ -12,7 +12,7 @@
             desc = "Open";
           }
           {
-            run = ''swww img "$@"'';
+            run = ''swww img --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="1.75" "$@"'';
             block = false;
             desc = "Wallpaper";
           }

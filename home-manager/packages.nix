@@ -27,7 +27,6 @@
     # Coding stuff
     tgbot-cpp
     gdb
-    vscode-extensions.vadimcn.vscode-lldb
     (python3.withPackages (ps: with ps; [ debugpy ]))
     clang
     nodejs

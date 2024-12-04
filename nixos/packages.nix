@@ -26,7 +26,6 @@
     waybar
     # Sound
     pipewire
-    pulseaudio
     wireplumber
     alsa-lib
     alsa-utils

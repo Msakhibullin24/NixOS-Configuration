@@ -140,9 +140,34 @@
       ];
 
       bind = [
-        ''$mod, r, exec, swww img $(printf "$HOME/Pictures/wallpapers/%s\n" $(ls ~/Pictures/wallpapers | grep .png | shuf -n1)) --transition-type=wipe --transition-bezier=".8,.2,.3,1"''
-        ''$mod shift, r, exec, swww img $(printf "$HOME/Pictures/****/%s\n" $(ls ~/Pictures/\*\*\*\* | grep .png | shuf -n1)) --transition-type=wipe --transition-bezier=".8,.2,.3,1"''
-        ''ctrl alt, r, exec, swww img $HOME/Pictures/****/nsfw_51.png --transition-type=wipe --transition-bezier=".8,.2,.3,1"''
+        ''$mod, r, exec, swww img $(printf "$HOME/Pictures/wallpapers/%s\n" $(ls ~/Pictures/wallpapers | grep .png | shuf -n1)) --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, r, exec, swww img $(printf "$HOME/Pictures/****/%s\n" $(ls ~/Pictures/\*\*\*\* | grep .png | shuf -n1)) --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+
+        ''ctrl alt, r, exec, swww img $HOME/Pictures/****/nsfw_51.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+
+        ''$mod, kp_end, exec, swww img $HOME/Pictures/wallpapers/wallpaper_62.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod, kp_down, exec, swww img $HOME/Pictures/wallpapers/wallpaper_67.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod, kp_next, exec, swww img $HOME/Pictures/wallpapers/wallpaper_81.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod, kp_left, exec, swww img $HOME/Pictures/wallpapers/wallpaper_86.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod, kp_begin, exec, swww img $HOME/Pictures/wallpapers/wallpaper_92.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod, kp_right, exec, swww img $HOME/Pictures/wallpapers/wallpaper_106.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod, kp_home, exec, swww img $HOME/Pictures/wallpapers/wallpaper_112.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod, kp_up, exec, swww img $HOME/Pictures/wallpapers/wallpaper_113.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod, kp_prior, exec, swww img $HOME/Pictures/wallpapers/wallpaper_114.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod, kp_insert, exec, swww img $HOME/Pictures/wallpapers/wallpaper_122.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+
+        ''$mod shift, kp_end, exec, swww img $HOME/Pictures/****/nsfw_1.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, kp_down, exec, swww img $HOME/Pictures/****/nsfw_18.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, kp_next, exec, swww img $HOME/Pictures/****/nsfw_126.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, kp_left, exec, swww img $HOME/Pictures/****/nsfw_133.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, kp_begin, exec, swww img $HOME/Pictures/****/nsfw_54.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, kp_right, exec, swww img $HOME/Pictures/****/nsfw_60.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, kp_home, exec, swww img $HOME/Pictures/****/nsfw_80.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, kp_up, exec, swww img $HOME/Pictures/****/nsfw_76.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, kp_prior, exec, swww img $HOME/Pictures/****/nsfw_131.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, kp_insert, exec, swww img $HOME/Pictures/****/nsfw_121.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, kp_delete, exec, swww img $HOME/Pictures/****/gif_nsfw_1.gif --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, kp_enter, exec, swww img $HOME/Pictures/****/gif_nsfw_2.gif --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
 
         # "$mod, return, exec, alacritty"
         "$mod, return, exec, foot"

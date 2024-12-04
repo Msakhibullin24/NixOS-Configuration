@@ -26,77 +26,91 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = {
-    nixpkgs,
-    nixpkgs-stable,
-    home-manager,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
+  outputs =
+    {
+      nixpkgs,
+      nixpkgs-stable,
+      home-manager,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
 
-    pkgs-overlay = import ./pkgs;
-    ayugram-overlay = final: prev: {
-      inherit (inputs.ayugram-desktop.packages.${system}) ayugram-desktop;
-    };
-    utillinux-overlay = final: prev: {
-      utillinux = prev.util-linux;
-    };
+      pkgs-overlay = import ./pkgs;
+      ayugram-overlay = final: prev: {
+        inherit (inputs.ayugram-desktop.packages.${system}) ayugram-desktop;
+      };
+      utillinux-overlay = final: prev: {
+        utillinux = prev.util-linux;
+      };
 
-    overlays = [
-      pkgs-overlay
-      ayugram-overlay
-      utillinux-overlay
-    ];
+      overlays = [
+        pkgs-overlay
+        ayugram-overlay
+        utillinux-overlay
+      ];
 
-    stable-overlay = final: prev: {
-      stable = import nixpkgs-stable {
-        inherit system overlays;
+      stable-overlay = final: prev: {
+        stable = import nixpkgs-stable {
+          inherit system overlays;
+          config.allowUnfree = true;
+        };
+      };
+
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = overlays ++ [ stable-overlay ];
         config.allowUnfree = true;
       };
-    };
 
-    pkgs = import nixpkgs {
-      inherit system;
-      overlays = overlays ++ [stable-overlay];
-      config.allowUnfree = true;
-    };
+      username = "darkangel";
 
-    username = "darkangel";
+      flavor = "mocha";
+    in
+    {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit
+            pkgs
+            system
+            inputs
+            flavor
+            ;
+        };
 
-    flavor = "mocha";
-  in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = {
-        inherit pkgs system inputs flavor;
+        modules = [
+          ./nixos/configuration.nix
+          inputs.nixvim.nixosModules.nixvim
+          inputs.sddm-sugar-candy-nix.nixosModules.default
+          inputs.catppuccin.nixosModules.catppuccin
+        ];
       };
 
-      modules = [
-        ./nixos/configuration.nix
-        inputs.nixvim.nixosModules.nixvim
-        inputs.sddm-sugar-candy-nix.nixosModules.default
-        inputs.catppuccin.nixosModules.catppuccin
-      ];
-    };
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
 
-    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+        extraSpecialArgs = {
+          inherit username flavor;
+        };
 
-      extraSpecialArgs = {
-        inherit username flavor;
+        modules = [
+          ./home-manager/home.nix
+          inputs.nixvim.homeManagerModules.nixvim
+          inputs.catppuccin.homeManagerModules.catppuccin
+        ];
       };
 
-      modules = [
-        ./home-manager/home.nix
-        inputs.nixvim.homeManagerModules.nixvim
-        inputs.catppuccin.homeManagerModules.catppuccin
-      ];
-    };
-
-    devShells.${system} = {
-      cpp = pkgs.mkShell {
-        buildInputs = with pkgs; [boost openssl zlib curl tgbot-cpp];
-        packages = with pkgs; [clang];
+      devShells.${system} = {
+        cpp = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            boost
+            openssl
+            zlib
+            curl
+            tgbot-cpp
+          ];
+          packages = with pkgs; [ clang ];
+        };
       };
     };
-  };
 }

@@ -13,8 +13,8 @@ local config = {
 		nix = { "nixfmt" },
 		-- stylua
 		lua = { "stylua" },
-		-- astyle
-		java = { "astyle" },
+		-- uncrustify
+		java = { "uncrustify" },
 		-- clang-tools
 		cpp = { "clang-format" },
 		-- shfmt
@@ -33,11 +33,9 @@ local config = {
 		html = { "superhtml" },
 		-- stylelint
 		css = { "stylelint" },
-		-- codespell
-		["*"] = { "codespell" },
 
-		-- nothing
-		["_"] = { "trim_whitespace" },
+		-- codespell and nothing
+		["_"] = { "codespell", "trim_whitespace" },
 	},
 }
 
