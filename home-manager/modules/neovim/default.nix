@@ -28,6 +28,7 @@ in
       svelte-language-server
       marksman
       emmet-ls
+      omnisharp-roslyn
 
       # Formatters
       nixfmt-rfc-style
@@ -39,6 +40,7 @@ in
       superhtml
       stylelint
       codespell
+      csharpier
 
       # LSP + Formatters
       clang-tools
@@ -112,7 +114,10 @@ in
       # LSP
       {
         plugin = nvim-lspconfig;
-        config = toLuaFile ./plugins/lsp/lspconfig.lua;
+        config = toLua ''
+          local omnisharp_bin = "${pkgs.omnisharp-roslyn}/bin/OmniSharp"
+          ${builtins.readFile ./plugins/lsp/lspconfig.lua}
+        '';
       }
       {
         plugin = fidget-nvim;
@@ -148,7 +153,7 @@ in
       {
         plugin = nvim-dap;
         config = toLua ''
-          local codelldbFolder = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}"
+          local codelldb_bin = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb"
           ${builtins.readFile ./plugins/dap.lua}
         '';
       }

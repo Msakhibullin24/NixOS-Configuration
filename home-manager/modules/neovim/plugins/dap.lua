@@ -8,7 +8,7 @@ dap.adapters = {
 		type = "server",
 		port = "${port}",
 		executable = {
-			command = codelldbFolder .. "/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb",
+			command = codelldb_bin,
 			args = { "--port", "${port}" },
 		},
 	},

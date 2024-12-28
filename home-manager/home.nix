@@ -1,4 +1,5 @@
-{username, ...}: {
+{ username, ... }:
+{
   imports = [
     ./modules
     ./scripts

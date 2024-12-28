@@ -52,8 +52,13 @@
         NFQWS_UDP_PKT_IN=0
 
         NFQWS_OPT="
-        --filter-udp=443,50000-65535 --dpi-desync=fake,tamper --dpi-desync-any-protocol --dpi-desync-repeats=17
+        --filter-tcp=80,443 --dpi-desync=disorder2 --dpi-desync-ttl=12 --new
+        --filter-udp=443,50000-65535 --dpi-desync=fake,tamper --dpi-desync-any-protocol --dpi-desync-repeats=19
         "
+
+        # NFQWS_OPT="
+        # --filter-udp=443,50000-65535 --dpi-desync=fake,tamper --dpi-desync-any-protocol --dpi-desync-repeats=19
+        # "
 
         # none,ipset,hostlist,autohostlist
         MODE_FILTER=none

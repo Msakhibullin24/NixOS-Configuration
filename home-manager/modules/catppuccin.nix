@@ -1,7 +1,7 @@
-{flavor, ...}: {
+{ flavor, accent, ... }:
+{
   catppuccin = {
     enable = true;
-    accent = "mauve";
-    inherit flavor;
+    inherit flavor accent;
   };
 }

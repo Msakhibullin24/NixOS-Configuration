@@ -1,7 +1,13 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   toggle-touchpad = pkgs.writeScriptBin "toggle-touchpad" (builtins.readFile ./toggletouchpad.sh);
-in {
+  favorite-wallpaper = pkgs.writeScriptBin "favorite-wallpaper" (
+    builtins.readFile ./favoritewallpaper.sh
+  );
+in
+{
   home.packages = [
     toggle-touchpad
+    favorite-wallpaper
   ];
 }

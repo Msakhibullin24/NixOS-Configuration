@@ -1,7 +1,6 @@
 {
   programs.yazi = {
     enable = true;
-    catppuccin.enable = false;
 
     settings = {
       opener = {
@@ -12,7 +11,7 @@
             desc = "Open";
           }
           {
-            run = ''swww img --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="1.75" "$@"'';
+            run = ''swww img --transition-type=grow --transition-pos="top-right" --transition-bezier=".6,.1,.5,.9" --transition-duration="0.8" --transition-fps=60 "$@"'';
             block = false;
             desc = "Wallpaper";
           }
@@ -31,9 +30,8 @@
         ];
       };
       open = {
-        append_rules =
-          [
-          ];
+        append_rules = [
+        ];
       };
     };
   };

@@ -29,6 +29,7 @@
     gdb
     (python3.withPackages (ps: with ps; [ debugpy ]))
     clang
+    dotnet-sdk_9
     nodejs
     nodePackages.pnpm
     ngrok
@@ -68,6 +69,7 @@
         jdk
       ];
     })
+    mindustry-wayland
     terraria-server
     osu-lazer-bin
     # Other

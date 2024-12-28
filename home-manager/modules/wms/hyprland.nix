@@ -12,10 +12,12 @@
       monitor = ",1920x1080@60,auto,1";
 
       env = [
+        "NIXOS_OZONE_WL,1"
+        "GDK_BACKEND,wayland"
+        "QT_QPA_PLATFORM,wayland"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
-        "QT_QPA_PLATFORM,wayland"
         "XDG_SCREENSHOTS_DIR,$HOME/Pictures/Screenshots/"
       ];
 
@@ -63,9 +65,11 @@
           ignore_opacity = true;
         };
 
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
+        shadow = {
+          enabled = true;
+          range = 4;
+          render_power = 3;
+        };
 
         dim_inactive = false;
         dim_strength = 7.0e-2;
@@ -140,34 +144,36 @@
       ];
 
       bind = [
-        ''$mod, r, exec, swww img $(printf "$HOME/Pictures/wallpapers/%s\n" $(ls ~/Pictures/wallpapers | grep .png | shuf -n1)) --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod shift, r, exec, swww img $(printf "$HOME/Pictures/****/%s\n" $(ls ~/Pictures/\*\*\*\* | grep .png | shuf -n1)) --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod, r, exec, swww img $(printf "$HOME/Pictures/wallpapers/%s\n" $(ls ~/Pictures/wallpapers | grep .png | shuf -n1)) --transition-type=grow --transition-pos="top-right" --transition-bezier=".6,.1,.5,.9" --transition-duration="0.8" --transition-fps=60''
+        ''$mod shift, r, exec, swww img $(printf "$HOME/Pictures/****/%s\n" $(ls ~/Pictures/\*\*\*\* | grep .png | shuf -n1)) --transition-type=grow --transition-pos="top-right" --transition-bezier=".6,.1,.5,.9" --transition-duration="0.8" --transition-fps=60''
 
-        ''ctrl alt, r, exec, swww img $HOME/Pictures/****/nsfw_51.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''ctrl alt, r, exec, swww img $HOME/Pictures/reset.png --transition-type=grow --transition-pos="top-right" --transition-bezier=".6,.1,.5,.9" --transition-duration="0.8" --transition-fps=60''
 
-        ''$mod, kp_end, exec, swww img $HOME/Pictures/wallpapers/wallpaper_62.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod, kp_down, exec, swww img $HOME/Pictures/wallpapers/wallpaper_67.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod, kp_next, exec, swww img $HOME/Pictures/wallpapers/wallpaper_81.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod, kp_left, exec, swww img $HOME/Pictures/wallpapers/wallpaper_86.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod, kp_begin, exec, swww img $HOME/Pictures/wallpapers/wallpaper_92.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod, kp_right, exec, swww img $HOME/Pictures/wallpapers/wallpaper_106.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod, kp_home, exec, swww img $HOME/Pictures/wallpapers/wallpaper_112.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod, kp_up, exec, swww img $HOME/Pictures/wallpapers/wallpaper_113.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod, kp_prior, exec, swww img $HOME/Pictures/wallpapers/wallpaper_114.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod, kp_insert, exec, swww img $HOME/Pictures/wallpapers/wallpaper_122.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod, kp_end, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 1''
+        ''$mod, kp_down, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 2''
+        ''$mod, kp_next, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 3''
+        ''$mod, kp_left, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 4''
+        ''$mod, kp_begin, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 5''
+        ''$mod, kp_right, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 6''
+        ''$mod, kp_home, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 7''
+        ''$mod, kp_up, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 8''
+        ''$mod, kp_prior, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 9''
+        ''$mod, kp_insert, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 10''
+        ''$mod, kp_delete, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 11''
+        ''$mod, kp_enter, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 12''
 
-        ''$mod shift, kp_end, exec, swww img $HOME/Pictures/****/nsfw_1.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod shift, kp_down, exec, swww img $HOME/Pictures/****/nsfw_18.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod shift, kp_next, exec, swww img $HOME/Pictures/****/nsfw_126.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod shift, kp_left, exec, swww img $HOME/Pictures/****/nsfw_133.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod shift, kp_begin, exec, swww img $HOME/Pictures/****/nsfw_54.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod shift, kp_right, exec, swww img $HOME/Pictures/****/nsfw_60.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod shift, kp_home, exec, swww img $HOME/Pictures/****/nsfw_80.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod shift, kp_up, exec, swww img $HOME/Pictures/****/nsfw_76.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod shift, kp_prior, exec, swww img $HOME/Pictures/****/nsfw_131.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod shift, kp_insert, exec, swww img $HOME/Pictures/****/nsfw_121.png --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod shift, kp_delete, exec, swww img $HOME/Pictures/****/gif_nsfw_1.gif --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
-        ''$mod shift, kp_enter, exec, swww img $HOME/Pictures/****/gif_nsfw_2.gif --transition-type=wipe --transition-bezier=".75,0,.175,1" --transition-duration="0.8"''
+        ''$mod shift, kp_end, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 1''
+        ''$mod shift, kp_down, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 2''
+        ''$mod shift, kp_next, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 3''
+        ''$mod shift, kp_left, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 4''
+        ''$mod shift, kp_begin, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 5''
+        ''$mod shift, kp_right, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 6''
+        ''$mod shift, kp_home, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 7''
+        ''$mod shift, kp_up, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 8''
+        ''$mod shift, kp_prior, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 9''
+        ''$mod shift, kp_insert, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 10''
+        ''$mod shift, kp_delete, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 11''
+        ''$mod shift, kp_enter, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 12''
 
         # "$mod, return, exec, alacritty"
         "$mod, return, exec, foot"

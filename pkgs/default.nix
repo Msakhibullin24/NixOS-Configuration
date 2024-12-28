@@ -1,4 +1,5 @@
 final: prev: {
-  anilibria-cli = prev.callPackage ./anilibria-cli {};
-  tgbot-cpp = prev.callPackage ./tgbot-cpp {};
+  anilibria-cli = prev.callPackage ./anilibria-cli { };
+  catppuccin-cursors = prev.callPackage ./catppuccin-cursors { };
+  tgbot-cpp = prev.callPackage ./tgbot-cpp { };
 }

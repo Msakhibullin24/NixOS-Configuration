@@ -1,10 +1,13 @@
+{ cursor-flavor, cursor-accent, ... }:
 {
   services.displayManager.sddm = {
     enable = true;
+    wayland.enable = true;
     autoNumlock = true;
     settings = {
       Theme = {
-        CursorTheme = "catppuccin-mocha-rosewater-cursors";
+        CursorTheme = "catppuccin-${cursor-flavor}-${cursor-accent}-cursors";
+        CursorSize = 18;
       };
     };
     sugarCandyNix = {

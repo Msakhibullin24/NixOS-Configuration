@@ -33,6 +33,8 @@ local config = {
 		html = { "superhtml" },
 		-- stylelint
 		css = { "stylelint" },
+		-- csharpier
+		cs = { "csharpier" },
 
 		-- codespell and nothing
 		["_"] = { "codespell", "trim_whitespace" },

@@ -1,4 +1,11 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  flavor,
+  accent,
+  cursor-flavor,
+  cursor-accent,
+  ...
+}:
 {
   environment.systemPackages = with pkgs; [
     # CLI utils
@@ -22,6 +29,7 @@
     # WMs and stuff
     xdg-desktop-portal-hyprland
     hyprland
+    hyprland-qtutils
     seatd
     waybar
     # Sound
@@ -45,8 +53,13 @@
     home-manager
     adwaita-icon-theme
     vimix-cursor-theme
-    stable.catppuccin-cursors.mochaRosewater
-    stable.catppuccin-papirus-folders
+    (catppuccin-cursors.override {
+      flavor = cursor-flavor;
+      accent = cursor-accent;
+    })
+    (catppuccin-papirus-folders.override {
+      inherit flavor accent;
+    })
   ];
 
   fonts.packages = with pkgs; [
@@ -54,11 +67,7 @@
     noto-fonts
     noto-fonts-emoji
     twemoji-color-font
-    (nerdfonts.override {
-      fonts = [
-        "NerdFontsSymbolsOnly"
-        "JetBrainsMono"
-      ];
-    })
+    nerd-fonts.symbols-only
+    nerd-fonts.jetbrains-mono
   ];
 }

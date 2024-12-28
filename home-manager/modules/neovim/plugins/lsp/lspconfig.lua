@@ -130,3 +130,10 @@ lspconfig.gdshader_lsp.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+-- omnisharp-roslyn
+lspconfig.omnisharp.setup({
+	cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
+	on_attach = on_attach,
+	capabilities = capabilities,
+})

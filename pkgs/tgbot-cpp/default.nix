@@ -20,8 +20,16 @@ stdenv.mkDerivation rec {
     hash = "sha256-rlC9fUzGlmp3tZhE6MlAtZWz4CIacJ757NB3bNRyXj0=";
   };
 
-  buildInputs = [boost openssl zlib curl];
-  nativeBuildInputs = [cmake pkg-config];
+  buildInputs = [
+    boost
+    openssl
+    zlib
+    curl
+  ];
+  nativeBuildInputs = [
+    cmake
+    pkg-config
+  ];
 
   meta = {
     description = "C++ library for Telegram bot API.";

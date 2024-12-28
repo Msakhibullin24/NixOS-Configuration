@@ -1,7 +1,8 @@
-{flavor, ...}: {
+{ flavor, accent, ... }:
+{
   catppuccin = {
     enable = false;
-    accent = "mauve";
-    inherit flavor;
+    inherit flavor accent;
+    tty.enable = true;
   };
 }
