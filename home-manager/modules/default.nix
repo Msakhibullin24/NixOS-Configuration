@@ -3,6 +3,7 @@
     ./neovim
     # ./nixvim
     ./sources
+    ./vim
     ./wms
 
     ./alacritty.nix

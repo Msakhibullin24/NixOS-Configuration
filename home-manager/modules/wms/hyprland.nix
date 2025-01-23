@@ -31,7 +31,7 @@
 
         kb_layout = "us,ru";
         kb_variant = "lang";
-        kb_options = "grp:toggle";
+        kb_options = "grp:toggle, ctrl:nocaps";
 
         follow_mouse = 1;
 
@@ -144,36 +144,36 @@
       ];
 
       bind = [
-        ''$mod, r, exec, swww img $(printf "$HOME/Pictures/wallpapers/%s\n" $(ls ~/Pictures/wallpapers | grep .png | shuf -n1)) --transition-type=grow --transition-pos="top-right" --transition-bezier=".6,.1,.5,.9" --transition-duration="0.8" --transition-fps=60''
-        ''$mod shift, r, exec, swww img $(printf "$HOME/Pictures/****/%s\n" $(ls ~/Pictures/\*\*\*\* | grep .png | shuf -n1)) --transition-type=grow --transition-pos="top-right" --transition-bezier=".6,.1,.5,.9" --transition-duration="0.8" --transition-fps=60''
+        ''$mod, r, exec, random-wallpaper "$HOME/Pictures/wallpapers"''
+        ''$mod shift, r, exec, random-wallpaper "$HOME/Pictures/****"''
 
         ''ctrl alt, r, exec, swww img $HOME/Pictures/reset.png --transition-type=grow --transition-pos="top-right" --transition-bezier=".6,.1,.5,.9" --transition-duration="0.8" --transition-fps=60''
 
-        ''$mod, kp_end, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 1''
-        ''$mod, kp_down, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 2''
-        ''$mod, kp_next, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 3''
-        ''$mod, kp_left, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 4''
-        ''$mod, kp_begin, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 5''
-        ''$mod, kp_right, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 6''
-        ''$mod, kp_home, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 7''
-        ''$mod, kp_up, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 8''
-        ''$mod, kp_prior, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 9''
-        ''$mod, kp_insert, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 10''
-        ''$mod, kp_delete, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 11''
-        ''$mod, kp_enter, exec, favorite-wallpaper "$HOME/Pictures/wallpapers/favorite" 12''
+        ''$mod, kp_end, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 1''
+        ''$mod, kp_down, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 2''
+        ''$mod, kp_next, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 3''
+        ''$mod, kp_left, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 4''
+        ''$mod, kp_begin, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 5''
+        ''$mod, kp_right, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 6''
+        ''$mod, kp_home, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 7''
+        ''$mod, kp_up, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 8''
+        ''$mod, kp_prior, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 9''
+        ''$mod, kp_insert, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 10''
+        ''$mod, kp_delete, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 11''
+        ''$mod, kp_enter, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 12''
 
-        ''$mod shift, kp_end, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 1''
-        ''$mod shift, kp_down, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 2''
-        ''$mod shift, kp_next, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 3''
-        ''$mod shift, kp_left, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 4''
-        ''$mod shift, kp_begin, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 5''
-        ''$mod shift, kp_right, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 6''
-        ''$mod shift, kp_home, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 7''
-        ''$mod shift, kp_up, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 8''
-        ''$mod shift, kp_prior, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 9''
-        ''$mod shift, kp_insert, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 10''
-        ''$mod shift, kp_delete, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 11''
-        ''$mod shift, kp_enter, exec, favorite-wallpaper "$HOME/Pictures/****/favorite" 12''
+        ''$mod shift, kp_end, exec, favorite-wallpaper "$HOME/Pictures/****" 1''
+        ''$mod shift, kp_down, exec, favorite-wallpaper "$HOME/Pictures/****" 2''
+        ''$mod shift, kp_next, exec, favorite-wallpaper "$HOME/Pictures/****" 3''
+        ''$mod shift, kp_left, exec, favorite-wallpaper "$HOME/Pictures/****" 4''
+        ''$mod shift, kp_begin, exec, favorite-wallpaper "$HOME/Pictures/****" 5''
+        ''$mod shift, kp_right, exec, favorite-wallpaper "$HOME/Pictures/****" 6''
+        ''$mod shift, kp_home, exec, favorite-wallpaper "$HOME/Pictures/****" 7''
+        ''$mod shift, kp_up, exec, favorite-wallpaper "$HOME/Pictures/****" 8''
+        ''$mod shift, kp_prior, exec, favorite-wallpaper "$HOME/Pictures/****" 9''
+        ''$mod shift, kp_insert, exec, favorite-wallpaper "$HOME/Pictures/****" 10''
+        ''$mod shift, kp_delete, exec, favorite-wallpaper "$HOME/Pictures/****" 11''
+        ''$mod shift, kp_enter, exec, favorite-wallpaper "$HOME/Pictures/****" 12''
 
         # "$mod, return, exec, alacritty"
         "$mod, return, exec, foot"
@@ -190,7 +190,9 @@
 
         "$mod, c, killactive,"
         "$mod, tab, cyclenext,"
+        "$mod shift, tab, cyclenext, prev"
         "$mod, tab, bringactivetotop,"
+        "$mod shift, tab, bringactivetotop,"
         "$mod, apostrophe, exec, hyprlock"
 
         "$mod, t, togglefloating,"

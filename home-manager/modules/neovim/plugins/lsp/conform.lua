@@ -17,6 +17,7 @@ local config = {
 		java = { "uncrustify" },
 		-- clang-tools
 		cpp = { "clang-format" },
+		c = { "clang-format" },
 		-- shfmt
 		bash = { "shfmt" },
 		-- black

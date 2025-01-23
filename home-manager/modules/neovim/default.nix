@@ -9,9 +9,9 @@ in
 
     defaultEditor = true;
 
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
+    viAlias = false;
+    vimAlias = false;
+    vimdiffAlias = false;
 
     extraPackages = with pkgs; [
       fd
@@ -82,6 +82,10 @@ in
         plugin = lualine-nvim;
         config = toLuaFile ./plugins/lualine.lua;
       }
+      # {
+      #   plugin = noice-nvim;
+      #   config = toLuaFile ./plugins/noice.lua;
+      # }
 
       # Useful tools
       {
@@ -139,6 +143,7 @@ in
       }
       cmp_luasnip
       cmp-cmdline
+      cmp-cmdline-history
       cmp-buffer
       cmp-path
       cmp-dap

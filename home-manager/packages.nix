@@ -34,9 +34,12 @@
     nodePackages.pnpm
     ngrok
     android-tools
+    gnumake
     # CLI utils
     cava
     neofetch
+    libsixel
+    imagemagick
     btop
     radeontop
     gdu
@@ -72,6 +75,7 @@
     mindustry-wayland
     terraria-server
     osu-lazer-bin
+    xonotic
     # Other
   ];
 }

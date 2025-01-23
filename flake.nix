@@ -78,9 +78,9 @@
     in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        inherit pkgs;
         specialArgs = {
           inherit
-            pkgs
             system
             inputs
             flavor

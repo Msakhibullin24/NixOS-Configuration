@@ -8,7 +8,7 @@
           type = "gpt";
           partitions = {
             ESP = {
-              type =  "EF00";
+              type = "EF00";
               size = "512M";
               content = {
                 type = "filesystem";
@@ -39,7 +39,10 @@
                     mountpoint = "/home";
                   };
                   "/nix" = {
-                    mountOptions = [ "compress=zstd" "noatime" ];
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
                     mountpoint = "/nix";
                   };
                 };
