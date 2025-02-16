@@ -29,6 +29,7 @@ in
       marksman
       emmet-ls
       omnisharp-roslyn
+      neocmakelsp
 
       # Formatters
       nixfmt-rfc-style
@@ -41,6 +42,7 @@ in
       stylelint
       codespell
       csharpier
+      cmake-format
 
       # LSP + Formatters
       clang-tools
@@ -104,6 +106,10 @@ in
       {
         plugin = comment-nvim;
         config = toLuaFile ./plugins/comment.lua;
+      }
+      {
+        plugin = nvim-surround;
+        config = toLuaFile ./plugins/surround.lua;
       }
       {
         plugin = nvim-autopairs;

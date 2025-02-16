@@ -15,10 +15,15 @@ local config = {
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.close(),
-		["<Tab>"] = cmp.mapping(function(fallback)
+		["<C-n>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
-			elseif require("luasnip").expandable() then
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+		["<C-j>"] = cmp.mapping(function(fallback)
+			if require("luasnip").expandable() then
 				require("luasnip").expand()
 			elseif require("luasnip").expand_or_jumpable() then
 				require("luasnip").expand_or_jump()
@@ -26,10 +31,15 @@ local config = {
 				fallback()
 			end
 		end, { "i", "s" }),
-		["<S-Tab>"] = cmp.mapping(function(fallback)
+		["<C-p>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
-			elseif require("luasnip").jumpable(-1) then
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+		["<C-k>"] = cmp.mapping(function(fallback)
+			if require("luasnip").jumpable(-1) then
 				require("luasnip").jump(-1)
 			else
 				fallback()

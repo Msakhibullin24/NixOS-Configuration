@@ -1,14 +1,21 @@
 local map = vim.keymap.set
 local opts = { silent = true, noremap = true }
 
+map("n", "<escape>", ":noh<cr>", opts)
+
 map("n", "<leader>w", ":w<cr>", opts)
 map("n", "<leader>q", ":qa<cr>", opts)
 map("n", "<leader>Q", ":qa!<cr>", opts)
 
-map("n", "<C-k>", ":resize -2<cr>", opts)
-map("n", "<C-j>", ":resize +2<cr>", opts)
-map("n", "<C-l>", ":vertical resize -2<cr>", opts)
-map("n", "<C-h>", ":vertical resize +2<cr>", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-l>", "<C-w>l", opts)
+map("n", "<C-h>", "<C-w>h", opts)
+
+map("n", "<M-S-k>", ":resize -2<cr>", opts)
+map("n", "<M-S-j>", ":resize +2<cr>", opts)
+map("n", "<M-S-l>", ":vertical resize -2<cr>", opts)
+map("n", "<M-S-h>", ":vertical resize +2<cr>", opts)
 
 map("n", "<M-k>", ":m-2<cr>", opts)
 map("n", "<M-j>", ":m+1<cr>", opts)
@@ -32,6 +39,10 @@ map("n", "<leader>ls", ":LspStop<cr>", opts)
 map("n", "<leader>lS", ":LspStart<cr>", opts)
 map("n", "<leader>lr", ":LspRestart<cr>", opts)
 
+map("n", "<leader>ldo", function()
+	vim.diagnostic.open_float()
+end, opts)
+
 map("n", "<leader>db", function()
 	require("dap").toggle_breakpoint()
 end, opts)
@@ -44,7 +55,7 @@ end, opts)
 map("n", "<leader>do", function()
 	require("dap").step_out()
 end, opts)
-map("n", "<leader>do", function()
+map("n", "<leader>dO", function()
 	require("dap").step_over()
 end, opts)
 map("n", "<leader>dr", function()
@@ -76,18 +87,24 @@ map("n", "<leader>b", ":Telescope buffers<cr>", opts)
 map("n", "<leader>gf", ":Telescope git_files<cr>", opts)
 map("n", "<leader>of", ":Telescope oldfiles<cr>", opts)
 
-map("i", "jk", "<escape>", opts)
-map("i", "kj", "<escape>", opts)
+map("n", "ge", "yiw:%s/<C-r>0//g<Left><Left>")
+
+-- map("i", "jk", "<escape>", opts)
+-- map("i", "kj", "<escape>", opts)
+
+map("i", "<C-BS>", "<C-w>", opts)
 
 map("v", ">", ">gv", opts)
 map("v", "<", "<gv", opts)
+
+map("v", "ge", "y:%s/<C-r>0//g<Left><Left>")
 
 map({ "v", "x" }, "K", ":m '<-2<cr>gv=gv", opts)
 map({ "v", "x" }, "J", ":m '>+1<cr>gv=gv", opts)
 
 map("t", "<esc>", "<C-\\><C-n>", opts)
-map("t", "jk", "<C-\\><C-n>", opts)
-map("t", "kj", "<C-\\><C-n>", opts)
+-- map("t", "jk", "<C-\\><C-n>", opts)
+-- map("t", "kj", "<C-\\><C-n>", opts)
 
 map("t", "<C-h>", "<C-\\><C-n><C-w>h", opts)
 map("t", "<C-j>", "<C-\\><C-n><C-w>j", opts)

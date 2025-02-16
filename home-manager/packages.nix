@@ -16,8 +16,8 @@
     anilibria-cli
     rustdesk
     aseprite
-    zoom-us
     gparted
+    blender
     # Network stuff
     socat
     privoxy
@@ -25,7 +25,6 @@
     spoofdpi
     byedpi
     # Coding stuff
-    tgbot-cpp
     gdb
     (python3.withPackages (ps: with ps; [ debugpy ]))
     clang
@@ -35,6 +34,7 @@
     ngrok
     android-tools
     gnumake
+    cmake
     # CLI utils
     cava
     neofetch
@@ -60,6 +60,7 @@
     feh
     ueberzug
     rofi-power-menu
+    # ags
     # Games
     gamemode
     gamescope

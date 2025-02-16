@@ -16,6 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sddm-sugar-candy-nix = {
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -73,10 +78,12 @@
 
       flavor = "mocha";
       cursor-flavor = "latte";
-      accent = "mauve";
+      accent = "pink";
       cursor-accent = "rosewater";
     in
     {
+      packages.${system}.default = pkgs.callPackage ./ags { inherit inputs; };
+
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit pkgs;
         specialArgs = {
@@ -113,42 +120,10 @@
 
         modules = [
           ./home-manager/home.nix
+          inputs.ags.homeManagerModules.default
           inputs.nixvim.homeManagerModules.nixvim
           inputs.catppuccin.homeManagerModules.catppuccin
         ];
-      };
-
-      devShells.${system} = {
-        cpp = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            gcc
-            boost
-            openssl
-            zlib
-            curl
-            tgbot-cpp
-          ];
-          shellHook = ''
-            export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib"
-          '';
-        };
-        csharp = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            glfw-wayland
-          ];
-          shellHook = ''
-            export LD_LIBRARY_PATH="${pkgs.glfw-wayland}/lib"
-          '';
-        };
-        comfyui = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            gcc
-            zstd
-          ];
-          shellHook = ''
-            export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib:${pkgs.zstd.out}/lib"
-          '';
-        };
       };
     };
 }

@@ -31,7 +31,7 @@
 
         kb_layout = "us,ru";
         kb_variant = "lang";
-        kb_options = "grp:toggle, ctrl:nocaps";
+        kb_options = "grp:toggle, caps:escape";
 
         follow_mouse = 1;
 
@@ -46,9 +46,9 @@
         gaps_in = 5;
         # gaps_in = 0;
         gaps_out = 10;
-        border_size = 1;
-        # "col.active_border" = "rgba()";
-        # "col.inactive_border" = "rgba()";
+        border_size = 3;
+        "col.active_border" = "rgb(b4befe)";
+        "col.inactive_border" = "rgb(1e1e2e)";
 
         layout = "scroller";
       };
@@ -140,7 +140,8 @@
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "toggle-touchpad"
-        "ciadpi --ip 127.0.0.1 --port 3128 -a15 -s1 -q1 -Y -At -a15 -T5 -b1000 -S -f-1 -r1+sm -As -a15"
+        # "ciadpi --ip 127.0.0.1 --port 3128 -a15 -s1 -q1 -Y -At -a15 -T5 -b1000 -S -f-1 -r1+sm -As -a15"
+        "ciadpi --ip 127.0.0.1 --port 3128 -Kt,h -d1 -s0+s -d3+s -s6+s -d9+s -s12+s -d15+s -s20+s -d25+s -s30+s -d35+s -An -Ku -a19 -s443+s -d80+s -d443+s -s80+s -s443+s -d53+s -s53+s -d443+s"
       ];
 
       bind = [
@@ -185,7 +186,7 @@
 
         "$mod, d, exec, rofi -show drun"
         "$mod, x, exec, rofi -show power-menu -modi power-menu:rofi-power-menu"
-        # "$mod, x, exec, wlogout"
+        #"$mod, x, exec, wlogout"
         "$mod, v, exec, cliphist list | rofi -dmenu -p 'clipboard' | cliphist decode | wl-copy"
 
         "$mod, c, killactive,"

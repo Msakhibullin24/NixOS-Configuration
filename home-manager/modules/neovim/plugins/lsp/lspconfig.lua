@@ -137,3 +137,9 @@ lspconfig.omnisharp.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+-- cmake-language-server
+lspconfig.neocmake.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
