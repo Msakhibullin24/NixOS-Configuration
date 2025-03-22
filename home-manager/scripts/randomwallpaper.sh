@@ -10,6 +10,8 @@ if ! [ "$#" -lt 1 ] && ! [ "$#" -gt 1 ]; then
   wallpaper=$(shuf -n1 <"$1/.wallpapers")
   sed -i "\%${wallpaper//\*/\\*}%d" "$1/.wallpapers"
   if [ -f "$wallpaper" ]; then
+    echo "quit" | socat "$XDG_RUNTIME_DIR/mpv.sock" -
+    hyprctl dispatch exec swww-daemon
     swww img "$wallpaper" --transition-type=grow --transition-pos="top-right" --transition-bezier=".6,.1,.5,.9" --transition-duration="0.8" --transition-fps=60
   fi
 else

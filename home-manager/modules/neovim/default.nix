@@ -27,7 +27,8 @@ in
       typescript-language-server
       svelte-language-server
       marksman
-      emmet-ls
+      emmet-language-server
+      # emmet-ls
       omnisharp-roslyn
       neocmakelsp
 

@@ -26,4 +26,4 @@ o.updatetime = 300
 o.wrap = false
 o.scrolloff = 12
 o.cursorline = false
-o.guicursor = "n-i-v-ve-c-ci-sm:block,r-cr-o:hor20"
+-- o.guicursor = "n-i-v-ve-c-ci-sm:block,r-cr-o:hor20"

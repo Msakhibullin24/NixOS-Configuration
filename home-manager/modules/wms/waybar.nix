@@ -5,11 +5,24 @@
       mainBar = {
         layer = "top";
         position = "top";
+        # start_hidden = true;
         margin = "5 9 0 9";
 
-        modules-left = [ "hyprland/workspaces" "hyprland/language" "custom/touchpad" "keyboard-state" "clock" /* "group/group-power" */ ];
+        modules-left = [
+          "hyprland/workspaces"
+          "hyprland/language"
+          "custom/touchpad"
+          "keyboard-state"
+          "clock" # "group/group-power"
+        ];
         modules-center = [ "hyprland/window" ];
-        modules-right = [ "network" "pulseaudio" "backlight" "battery" "tray" ];
+        modules-right = [
+          "network"
+          "pulseaudio"
+          "backlight"
+          "battery"
+          "tray"
+        ];
 
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -74,13 +87,17 @@
           format-source = "{volume}% 󰍬";
           format-source-muted = "󰍭";
           format-icons = {
-              headphone = "󰋋";
-              hands-free = "󰋋";
-              headset = "󰋋";
-              phone = "󰏲";
-              portable = "󰏲";
-              car = "󰄋";
-              default = [ "󰕿" "󰖀" "󰕾" ];
+            headphone = "󰋋";
+            hands-free = "󰋋";
+            headset = "󰋋";
+            phone = "󰏲";
+            portable = "󰏲";
+            car = "󰄋";
+            default = [
+              "󰕿"
+              "󰖀"
+              "󰕾"
+            ];
           };
           on-click = "pamixer -t";
           on-click-right = "pamixer --default-source -t";
@@ -90,7 +107,21 @@
         "backlight" = {
           device = "amdgpu_bl1";
           format = "{percent}% {icon}";
-          format-icons = [ "" "" "" "" "" "" "" "" "" "" "" "" "" ];
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
           min-length = 7;
           tooltip = false;
         };
@@ -103,7 +134,18 @@
           format = "{capacity}% {icon}";
           format-charging = "{capacity}% 󰂄";
           format-alt = "{time} {icon}";
-          format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+          format-icons = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
         };
 
         "tray" = {

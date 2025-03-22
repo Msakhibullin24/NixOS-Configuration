@@ -46,11 +46,14 @@
         gaps_in = 5;
         # gaps_in = 0;
         gaps_out = 10;
+        # gaps_out = 0;
         border_size = 3;
+        # border_size = 1;
         "col.active_border" = "rgb(b4befe)";
         "col.inactive_border" = "rgb(1e1e2e)";
 
         layout = "scroller";
+        # layout = "dwindle";
       };
 
       decoration = {
@@ -125,8 +128,11 @@
         new_status = true;
       };
 
+      # plugin.scroller.column_default_width = "one";
+
       windowrulev2 = [
         "float, class:^(feh)$"
+        # "opacity 0.9, class:^(firefox)$"
         "float, title:^(MainPicker)$"
       ];
 
@@ -177,7 +183,8 @@
         ''$mod shift, kp_enter, exec, favorite-wallpaper "$HOME/Pictures/****" 12''
 
         # "$mod, return, exec, alacritty"
-        "$mod, return, exec, foot"
+        # "$mod, return, exec, foot"
+        "$mod, return, exec, kitty"
 
         "$mod shift, w, exec, firefox"
         ''$mod shift, v, exec, vesktop --proxy-server="socks5://127.0.0.1:3128"''
@@ -198,6 +205,13 @@
 
         "$mod, t, togglefloating,"
         "$mod, f, fullscreen,"
+
+        # "$mod, s, togglesplit,"
+        # "$mod shift, s, togglespecialworkspace,"
+
+        "$mod shift, g, togglespecialworkspace,"
+
+        "$mod, p, exec, hyprpicker | wl-copy"
 
         "$mod, s, scroller:cyclesize, next"
         "$mod shift, s, scroller:cyclesize, prev"
@@ -231,6 +245,16 @@
         "$mod shift, l, scroller:movewindow, r"
         "$mod shift, k, scroller:movewindow, u"
         "$mod shift, j, scroller:movewindow, d"
+
+        # "$mod, h, movefocus, l"
+        # "$mod, l, movefocus, r"
+        # "$mod, k, movefocus, u"
+        # "$mod, j, movefocus, d"
+        #
+        # "$mod shift, h, movewindow, l"
+        # "$mod shift, l, movewindow, r"
+        # "$mod shift, k, movewindow, u"
+        # "$mod shift, j, movewindow, d"
 
         "$mod ctrl, h, resizeactive, -60 0"
         "$mod ctrl, l, resizeactive,  60 0"

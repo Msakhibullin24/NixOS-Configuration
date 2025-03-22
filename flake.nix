@@ -26,11 +26,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland-qtutils = {
-      url = "github:hyprwm/hyprland-qtutils";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    # hyprland-qtutils = {
+    #   url = "github:hyprwm/hyprland-qtutils";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    #
     ayugram-desktop.url = "github:ayugram-port/ayugram-desktop";
 
     catppuccin.url = "github:catppuccin/nix";
@@ -53,12 +53,16 @@
       utillinux-overlay = final: prev: {
         utillinux = prev.util-linux;
       };
+      ags-pkgs-overlay = final: prev: {
+        ags-pkgs = inputs.ags.packages.${system};
+      };
 
       overlays = [
         pkgs-overlay
         ayugram-overlay
         utillinux-overlay
-        inputs.hyprland-qtutils.overlays.default
+        ags-pkgs-overlay
+        # inputs.hyprland-qtutils.overlays.default
       ];
 
       stable-overlay = final: prev: {
@@ -77,19 +81,15 @@
       username = "darkangel";
 
       flavor = "mocha";
-      cursor-flavor = "latte";
+      cursor-flavor = "mocha";
       accent = "pink";
       cursor-accent = "rosewater";
     in
     {
-      packages.${system}.default = pkgs.callPackage ./ags { inherit inputs; };
-
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit pkgs;
         specialArgs = {
           inherit
-            system
-            inputs
             flavor
             accent
             cursor-flavor
@@ -126,4 +126,5 @@
         ];
       };
     };
+
 }

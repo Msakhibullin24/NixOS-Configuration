@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   programs.ags = {
     enable = true;
@@ -7,6 +10,8 @@
 
     extraPackages = with pkgs; [
       fzf
+      ags-pkgs.hyprland
+      ags-pkgs.mpris
     ];
   };
 }

@@ -4,6 +4,11 @@ if not status_ok then
 end
 
 dap.adapters = {
+	gdb = {
+		type = "executable",
+		command = "gdb",
+		args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
+	},
 	codelldb = {
 		type = "server",
 		port = "${port}",
@@ -23,12 +28,13 @@ dap.configurations = {
 	c = {
 		{
 			name = "Launch via codelldb",
-			type = "codelldb",
+			type = "gdb",
 			request = "launch",
 			program = function()
 				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
 			end,
 			cwd = "${workspaceFolder}",
+			stopAtBeginningOfMainSubprogramm = false,
 			stopOnEntry = false,
 			runInTerminal = true,
 			terminal = "integrated",

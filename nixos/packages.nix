@@ -29,7 +29,7 @@
     # WMs and stuff
     xdg-desktop-portal-hyprland
     hyprland
-    hyprland-qtutils
+    # hyprland-qtutils
     seatd
     waybar
     # Sound

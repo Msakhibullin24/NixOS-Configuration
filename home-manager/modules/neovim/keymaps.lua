@@ -30,8 +30,8 @@ map("n", "<leader>tv", ":ToggleTerm size=50 direction=vertical<cr>", opts)
 
 map("n", "L", ":BufferNext<cr>", opts)
 map("n", "H", ":BufferPrevious<cr>", opts)
-map("n", "<C-S-l>", ":BufferMoveNext<cr>", opts)
-map("n", "<C-S-h>", ":BufferMovePrevious<cr>", opts)
+map("n", "<M-l>", ":BufferMoveNext<cr>", opts)
+map("n", "<M-h>", ":BufferMovePrevious<cr>", opts)
 map("n", "<leader>c", ":BufferClose<cr>", opts)
 
 map("n", "<leader>li", ":LspInfo<cr>", opts)

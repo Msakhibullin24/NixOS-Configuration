@@ -115,8 +115,15 @@ lspconfig.marksman.setup({
 	capabilities = capabilities,
 })
 
--- emmet-ls or emmet-language-server
-lspconfig.emmet_ls.setup({
+-- ERROR: have error if word starting with dollar symbol
+-- emmet-ls
+-- lspconfig.emmet_ls.setup({
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities,
+-- })
+
+-- emmet-language-server
+lspconfig.emmet_language_server.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })

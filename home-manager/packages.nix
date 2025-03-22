@@ -18,6 +18,8 @@
     aseprite
     gparted
     blender
+    libreoffice-fresh
+    opentabletdriver
     # Network stuff
     socat
     privoxy
@@ -54,12 +56,14 @@
     mpvpaper
     zsh-powerlevel10k
     ripgrep
+    ags-pkgs.io
     # GUI utils
     mpv
     vlc
     feh
     ueberzug
     rofi-power-menu
+    hyprpicker
     # ags
     # Games
     gamemode
@@ -69,7 +73,7 @@
     (lutris.override {
       extraPkgs = pkgs: [
         wine
-        kdialog
+        kdePackages.kdialog
         jdk
       ];
     })

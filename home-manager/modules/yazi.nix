@@ -11,7 +11,7 @@
             desc = "Open";
           }
           {
-            run = ''swww img --transition-type=grow --transition-pos="top-right" --transition-bezier=".6,.1,.5,.9" --transition-duration="0.8" --transition-fps=60 "$@"'';
+            run = ''echo "quit" | socat "$XDG_RUNTIME_DIR/mpv.sock" -; hyprctl dispatch exec swww-daemon; swww img --transition-type=grow --transition-pos="top-right" --transition-bezier=".7,.1,.5,.9" --transition-duration="0.8" --transition-fps=60 "$@"'';
             block = false;
             desc = "Wallpaper";
           }
@@ -23,7 +23,7 @@
             desc = "Play";
           }
           {
-            run = ''mpvpaper -f -s -o "no-audio input-ipc-server=$XDG_RUNTIME_DIR/mpv.sock --loop" '*' "$@"'';
+            run = ''swww kill; echo "quit" | socat "$XDG_RUNTIME_DIR/mpv.sock" -; mpvpaper -f -s -o "no-audio input-ipc-server=$XDG_RUNTIME_DIR/mpv.sock --loop" '*' "$@"'';
             orphan = true;
             desc = "Wallpaper";
           }
