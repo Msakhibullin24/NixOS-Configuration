@@ -1,7 +1,6 @@
 {
   imports = [
     ./neovim
-    # ./nixvim
     ./sources
     ./vim
     ./wms
