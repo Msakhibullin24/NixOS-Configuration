@@ -189,6 +189,8 @@
         "$mod shift, w, exec, firefox"
         ''$mod shift, v, exec, vesktop --proxy-server="socks5://127.0.0.1:3128"''
         ''$mod shift, d, exec, discord --proxy-server=" socks5://127.0.0.1:3128 "''
+        # ''$mod shift, v, exec, vesktop''
+        # ''$mod shift, d, exec, discord''
         "$mod shift, t, exec, ayugram-desktop"
 
         "$mod, d, exec, rofi -show drun"
@@ -301,6 +303,8 @@
         ", xf86audiolowervolume, exec, pamixer -d 5 "
         ", xf86audiomute, exec, pamixer -t"
         ", xf86audiomicmute, exec, pamixer --default-source -t"
+        "ctrl, xf86audiomicmute, exec, pamixer --default-source -i 5"
+        "ctrl shift, xf86audiomicmute, exec, pamixer --default-source -d 5"
 
         ", xf86monbrightnessdown, exec, brightnessctl set 5%-"
         ", xf86monbrightnessup, exec, brightnessctl set 5%+"

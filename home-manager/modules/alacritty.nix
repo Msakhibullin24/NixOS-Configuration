@@ -7,10 +7,7 @@
 
       font = {
         size = 11.0;
-        normal = {
-          family = "JetBrainsMono NF";
-          style = "Bold";
-        };
+        normal.family = "JetBrainsMono NF";
       };
     };
   };

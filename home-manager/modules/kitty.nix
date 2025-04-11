@@ -4,7 +4,7 @@
     enable = true;
     shellIntegration.mode = "no-rc no-cursor no-sudo";
     settings = {
-      font_family = "JetBrainsMono NF Bold";
+      font_family = "JetBrainsMono NF";
       font_size = 11.0;
 
       enable_audio_bell = false;
@@ -13,7 +13,7 @@
       cursor_shape = "block";
 
       background_opacity = 0.9;
-      background_tint = if flavor == "latte" then 0.5 else 0.7;
+      background_tint = if flavor == "latte" then 0.5 else 0.8;
       background_image = "$HOME/Pictures/kitty/current/kitty.png";
       background_image_layout = "cscaled";
       background_image_linear = true;

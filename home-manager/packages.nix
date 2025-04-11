@@ -20,6 +20,7 @@
     blender
     libreoffice-fresh
     opentabletdriver
+    openseeface
     # Network stuff
     socat
     privoxy
