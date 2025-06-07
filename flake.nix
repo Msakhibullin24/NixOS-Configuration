@@ -122,9 +122,8 @@
           ./home-manager/home.nix
           inputs.ags.homeManagerModules.default
           inputs.nixvim.homeManagerModules.nixvim
-          inputs.catppuccin.homeManagerModules.catppuccin
+          inputs.catppuccin.homeModules.catppuccin
         ];
       };
     };
-
 }

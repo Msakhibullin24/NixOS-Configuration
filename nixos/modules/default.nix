@@ -10,6 +10,7 @@
     ./env.nix
     ./hyprland.nix
     ./networking.nix
+    ./otd.nix
     ./sound.nix
     ./ssh.nix
     ./steam.nix

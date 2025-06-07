@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     # Desktop apps
-    alacritty
     firefox-wayland
     discord
     vesktop
@@ -11,27 +10,21 @@
     qbittorrent
     krita
     obs-studio
-    godot_4
+    stable.godot_4
     ani-cli
     anilibria-cli
-    rustdesk
     aseprite
     gparted
     blender
     libreoffice-fresh
-    opentabletdriver
-    openseeface
     # Network stuff
     socat
-    privoxy
     zerotierone
-    spoofdpi
     byedpi
     # Coding stuff
     gdb
     (python3.withPackages (ps: with ps; [ debugpy ]))
     clang
-    dotnet-sdk_9
     nodejs
     nodePackages.pnpm
     ngrok
@@ -43,11 +36,9 @@
     neofetch
     libsixel
     imagemagick
-    btop
     radeontop
     gdu
-    yazi
-    kalker
+    stable.kalker
     cmatrix
     zip
     unzip
@@ -57,7 +48,9 @@
     mpvpaper
     zsh-powerlevel10k
     ripgrep
+    jq
     ags-pkgs.io
+    virtiofsd
     # GUI utils
     mpv
     vlc
@@ -65,7 +58,6 @@
     ueberzug
     rofi-power-menu
     hyprpicker
-    # ags
     # Games
     gamemode
     gamescope
@@ -73,9 +65,12 @@
     steam
     (lutris.override {
       extraPkgs = pkgs: [
-        wine
-        kdePackages.kdialog
         jdk
+        wine
+        winetricks
+        kdePackages.kdialog
+        libadwaita
+        gtk4
       ];
     })
     mindustry-wayland

@@ -4,8 +4,6 @@
     enable = true;
     xwayland.enable = true;
 
-    plugins = [ pkgs.hyprlandPlugins.hyprscroller ];
-
     settings = {
       "$mod" = "SUPER";
 
@@ -30,7 +28,7 @@
         numlock_by_default = true;
 
         kb_layout = "us,ru";
-        kb_variant = "lang";
+        kb_variant = ",";
         kb_options = "grp:toggle, caps:escape";
 
         follow_mouse = 1;
@@ -43,22 +41,21 @@
       };
 
       general = {
-        gaps_in = 5;
-        # gaps_in = 0;
-        gaps_out = 10;
-        # gaps_out = 0;
-        border_size = 3;
-        # border_size = 1;
+        #gaps_in = 5;
+        gaps_in = 0;
+        #gaps_out = 10;
+        gaps_out = 0;
+        #border_size = 3;
+        border_size = 1;
         "col.active_border" = "rgb(b4befe)";
         "col.inactive_border" = "rgb(1e1e2e)";
 
-        layout = "scroller";
-        # layout = "dwindle";
+        layout = "dwindle";
       };
 
       decoration = {
-        rounding = 8;
-        # rounding = 0;
+        #rounding = 8;
+        rounding = 0;
 
         blur = {
           enabled = true;
@@ -97,8 +94,8 @@
           "windows, 1, 3, overshot, popin 60%"
           "border, 1, 10, default"
           "fade, 1, 2, default"
-          "workspaces, 1, 4.5, md3_decel, slidefade 15%"
-          # "workspaces, 1, 3.5, overshot, slide"
+          # "workspaces, 1, 4.5, md3_decel, slidefade 15%"
+          "workspaces, 1, 3.5, overshot, slide"
           "specialWorkspace, 1, 3, md3_decel, slidevert"
         ];
       };
@@ -128,8 +125,6 @@
         new_status = true;
       };
 
-      # plugin.scroller.column_default_width = "one";
-
       windowrulev2 = [
         "float, class:^(feh)$"
         # "opacity 0.9, class:^(firefox)$"
@@ -142,7 +137,7 @@
 
       exec-once = [
         "waybar"
-        "swww init"
+        "swww-daemon"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "toggle-touchpad"
@@ -182,20 +177,15 @@
         ''$mod shift, kp_delete, exec, favorite-wallpaper "$HOME/Pictures/****" 11''
         ''$mod shift, kp_enter, exec, favorite-wallpaper "$HOME/Pictures/****" 12''
 
-        # "$mod, return, exec, alacritty"
-        # "$mod, return, exec, foot"
         "$mod, return, exec, kitty"
 
         "$mod shift, w, exec, firefox"
         ''$mod shift, v, exec, vesktop --proxy-server="socks5://127.0.0.1:3128"''
         ''$mod shift, d, exec, discord --proxy-server=" socks5://127.0.0.1:3128 "''
-        # ''$mod shift, v, exec, vesktop''
-        # ''$mod shift, d, exec, discord''
         "$mod shift, t, exec, ayugram-desktop"
 
         "$mod, d, exec, rofi -show drun"
         "$mod, x, exec, rofi -show power-menu -modi power-menu:rofi-power-menu"
-        #"$mod, x, exec, wlogout"
         "$mod, v, exec, cliphist list | rofi -dmenu -p 'clipboard' | cliphist decode | wl-copy"
 
         "$mod, c, killactive,"
@@ -208,55 +198,20 @@
         "$mod, t, togglefloating,"
         "$mod, f, fullscreen,"
 
-        # "$mod, s, togglesplit,"
-        # "$mod shift, s, togglespecialworkspace,"
-
-        "$mod shift, g, togglespecialworkspace,"
+        "$mod, s, togglesplit,"
+        "$mod shift, s, togglespecialworkspace,"
 
         "$mod, p, exec, hyprpicker | wl-copy"
 
-        "$mod, s, scroller:cyclesize, next"
-        "$mod shift, s, scroller:cyclesize, prev"
-
-        "$mod, i, scroller:admitwindow,"
-        "$mod, o, scroller:expelwindow,"
-
-        "$mod shift, i, scroller:setmode, col"
-        "$mod shift, o, scroller:setmode, row"
-
-        "ctrl alt, h, scroller:alignwindow, l"
-        "ctrl alt, j, scroller:alignwindow, d"
-        "ctrl alt, k, scroller:alignwindow, u"
-        "ctrl alt, l, scroller:alignwindow, r"
-        "ctrl alt, c, scroller:alignwindow, c"
-
-        "ctrl alt, a, scroller:fitsize, active"
-        "ctrl alt, v, scroller:fitsize, visible"
-        "ctrl alt shift, a, scroller:fitsize, all"
-        "ctrl alt, e, scroller:fitsize, toend"
-        "ctrl alt, b, scroller:fitsize, tobeg"
-
-        "$mod, a, scroller:toggleoverview,"
-
-        "$mod, h, scroller:movefocus, l"
-        "$mod, l, scroller:movefocus, r"
-        "$mod, k, scroller:movefocus, u"
-        "$mod, j, scroller:movefocus, d"
-
-        "$mod shift, h, scroller:movewindow, l"
-        "$mod shift, l, scroller:movewindow, r"
-        "$mod shift, k, scroller:movewindow, u"
-        "$mod shift, j, scroller:movewindow, d"
-
-        # "$mod, h, movefocus, l"
-        # "$mod, l, movefocus, r"
-        # "$mod, k, movefocus, u"
-        # "$mod, j, movefocus, d"
-        #
-        # "$mod shift, h, movewindow, l"
-        # "$mod shift, l, movewindow, r"
-        # "$mod shift, k, movewindow, u"
-        # "$mod shift, j, movewindow, d"
+        "$mod, h, movefocus, l"
+        "$mod, l, movefocus, r"
+        "$mod, k, movefocus, u"
+        "$mod, j, movefocus, d"
+        
+        "$mod shift, h, movewindow, l"
+        "$mod shift, l, movewindow, r"
+        "$mod shift, k, movewindow, u"
+        "$mod shift, j, movewindow, d"
 
         "$mod ctrl, h, resizeactive, -60 0"
         "$mod ctrl, l, resizeactive,  60 0"

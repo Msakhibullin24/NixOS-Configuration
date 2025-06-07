@@ -3,7 +3,7 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    terminal = "foot";
+    terminal = "kitty";
     theme = {
       "*" = {
         font = "JetBrainsMono NF 11";

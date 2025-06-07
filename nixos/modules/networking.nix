@@ -6,7 +6,7 @@
       "1.1.1.1"
     ];
     firewall = {
-      enable = true;
+      enable = false;
       allowedTCPPorts = [
         22
         80

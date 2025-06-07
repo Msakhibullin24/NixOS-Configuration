@@ -25,6 +25,10 @@ local on_attach = function(_, bufnr)
 	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
 		vim.lsp.buf.format()
 	end, {})
+
+	vim.diagnostic.config({
+		virtual_text = true,
+	})
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

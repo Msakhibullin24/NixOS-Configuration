@@ -13,7 +13,6 @@
     zsh
     nix-index
     ntfs3g
-    doas
     doas-sudo-shim
     killall
     openssh
@@ -28,10 +27,6 @@
     cliphist
     # WMs and stuff
     xdg-desktop-portal-hyprland
-    hyprland
-    # hyprland-qtutils
-    seatd
-    waybar
     # Sound
     pipewire
     wireplumber
@@ -52,7 +47,7 @@
     # Other
     home-manager
     adwaita-icon-theme
-    vimix-cursor-theme
+    vimix-cursors
     (catppuccin-cursors.override {
       flavor = cursor-flavor;
       accent = cursor-accent;

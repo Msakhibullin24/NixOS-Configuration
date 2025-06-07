@@ -7,7 +7,7 @@ in
   programs.neovim = {
     enable = true;
 
-    defaultEditor = true;
+    defaultEditor = false;
 
     viAlias = false;
     vimAlias = false;
@@ -85,10 +85,10 @@ in
         plugin = lualine-nvim;
         config = toLuaFile ./plugins/lualine.lua;
       }
-      # {
-      #   plugin = noice-nvim;
-      #   config = toLuaFile ./plugins/noice.lua;
-      # }
+      {
+        plugin = noice-nvim;
+        config = toLuaFile ./plugins/noice.lua;
+      }
 
       # Useful tools
       {
@@ -121,6 +121,7 @@ in
         plugin = gitsigns-nvim;
         config = toLuaFile ./plugins/gitsigns.lua;
       }
+      tagbar
 
       # LSP
       {

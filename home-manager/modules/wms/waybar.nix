@@ -4,9 +4,9 @@
     settings = {
       mainBar = {
         layer = "top";
-        position = "top";
+        position = "bottom";
         # start_hidden = true;
-        margin = "5 9 0 9";
+        #margin = "5 9 0 9";
 
         modules-left = [
           "hyprland/workspaces"
@@ -49,10 +49,10 @@
         "keyboard-state" = {
           #numlock = true;
           capslock = true;
-          format = "{icon} ";
+          format = "{icon}";
           format-icons = {
-            locked = "";
-            unlocked = "";
+            locked = " ";
+            unlocked = " ";
           };
         };
 

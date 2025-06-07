@@ -5,8 +5,8 @@
 
     xkb = {
       layout = "us,ru";
-      variant = "lang";
-      options = "grp:toggle";
+      variant = ",";
+      options = "grp:toggle, caps:escape";
     };
 
     desktopManager.xterm.enable = false;

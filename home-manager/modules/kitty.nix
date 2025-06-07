@@ -14,7 +14,7 @@
 
       background_opacity = 0.9;
       background_tint = if flavor == "latte" then 0.5 else 0.8;
-      background_image = "$HOME/Pictures/kitty/current/kitty.png";
+      background_image = "$HOME/Pictures/kitty.png";
       background_image_layout = "cscaled";
       background_image_linear = true;
     };

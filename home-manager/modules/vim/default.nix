@@ -12,7 +12,7 @@
   programs.vim = {
     enable = true;
 
-    defaultEditor = false;
+    defaultEditor = true;
 
     plugins = with pkgs.vimPlugins; [
       nerdtree

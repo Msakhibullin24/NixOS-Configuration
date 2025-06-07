@@ -21,8 +21,8 @@ set signcolumn=yes
 set termguicolors
 set clipboard=unnamedplus
 set noswapfile
-set term=foot
-"set t_RV=
+set term=kitty
+set t_RV=
 
 function! s:show_documentation()
   if (index(['vim', 'help'], &filetype) >= 0)
