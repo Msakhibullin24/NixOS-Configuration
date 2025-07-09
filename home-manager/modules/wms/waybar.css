@@ -9,7 +9,7 @@
 }
 
 window#waybar {
-  background: @base;
+  background: transparent;
 }
 
 window#waybar.hidden {
@@ -91,6 +91,20 @@ window#waybar.hidden {
   border-radius: 14px;
   color: @rosewater;
   background: @base;
+}
+
+#mpris {
+  margin-right: 8px;
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 14px;
+  color: @rosewater;
+  background: @base;
+}
+
+#mpris.paused {
+  color: @base;
+  background: @rosewater;
 }
 
 window#waybar.empty #window {

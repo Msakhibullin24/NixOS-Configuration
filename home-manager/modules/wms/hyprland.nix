@@ -41,12 +41,12 @@
       };
 
       general = {
-        #gaps_in = 5;
-        gaps_in = 0;
-        #gaps_out = 10;
-        gaps_out = 0;
-        #border_size = 3;
-        border_size = 1;
+        gaps_in = 5;
+        # gaps_in = 0;
+        gaps_out = 10;
+        # gaps_out = 0;
+        border_size = 3;
+        # border_size = 1;
         "col.active_border" = "rgb(b4befe)";
         "col.inactive_border" = "rgb(1e1e2e)";
 
@@ -54,8 +54,8 @@
       };
 
       decoration = {
-        #rounding = 8;
-        rounding = 0;
+        rounding = 8;
+        # rounding = 0;
 
         blur = {
           enabled = true;
@@ -66,12 +66,12 @@
         };
 
         shadow = {
-          enabled = true;
+          enabled = false;
           range = 4;
           render_power = 3;
         };
 
-        dim_inactive = false;
+        dim_inactive = true;
         dim_strength = 7.0e-2;
       };
 
@@ -94,8 +94,8 @@
           "windows, 1, 3, overshot, popin 60%"
           "border, 1, 10, default"
           "fade, 1, 2, default"
-          # "workspaces, 1, 4.5, md3_decel, slidefade 15%"
-          "workspaces, 1, 3.5, overshot, slide"
+          "workspaces, 1, 4.5, md3_decel, slidefade 15%"
+          # "workspaces, 1, 3.5, overshot, slide"
           "specialWorkspace, 1, 3, md3_decel, slidevert"
         ];
       };
@@ -142,7 +142,7 @@
         "wl-paste --type image --watch cliphist store"
         "toggle-touchpad"
         # "ciadpi --ip 127.0.0.1 --port 3128 -a15 -s1 -q1 -Y -At -a15 -T5 -b1000 -S -f-1 -r1+sm -As -a15"
-        "ciadpi --ip 127.0.0.1 --port 3128 -Kt,h -d1 -s0+s -d3+s -s6+s -d9+s -s12+s -d15+s -s20+s -d25+s -s30+s -d35+s -An -Ku -a19 -s443+s -d80+s -d443+s -s80+s -s443+s -d53+s -s53+s -d443+s"
+        # "ciadpi --ip 127.0.0.1 --port 3128 -Kt,h -d1 -s0+s -d3+s -s6+s -d9+s -s12+s -d15+s -s20+s -d25+s -s30+s -d35+s -An -Ku -a19 -s443+s -d80+s -d443+s -s80+s -s443+s -d53+s -s53+s -d443+s"
       ];
 
       bind = [
@@ -179,9 +179,12 @@
 
         "$mod, return, exec, kitty"
 
-        "$mod shift, w, exec, firefox"
-        ''$mod shift, v, exec, vesktop --proxy-server="socks5://127.0.0.1:3128"''
-        ''$mod shift, d, exec, discord --proxy-server=" socks5://127.0.0.1:3128 "''
+        # "$mod shift, w, exec, firefox"
+        #''$mod shift, v, exec, vesktop --proxy-server="socks5://127.0.0.1:3128"''
+        #''$mod shift, d, exec, discord --proxy-server=" socks5://127.0.0.1:3128 "''
+        "$mod shift, w, exec, firefox-beta"
+        "$mod shift, v, exec, vesktop"
+        "$mod shift, d, exec, discord"
         "$mod shift, t, exec, ayugram-desktop"
 
         "$mod, d, exec, rofi -show drun"
@@ -207,7 +210,7 @@
         "$mod, l, movefocus, r"
         "$mod, k, movefocus, u"
         "$mod, j, movefocus, d"
-        
+
         "$mod shift, h, movewindow, l"
         "$mod shift, l, movewindow, r"
         "$mod shift, k, movewindow, u"

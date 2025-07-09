@@ -12,7 +12,7 @@
   programs.vim = {
     enable = true;
 
-    defaultEditor = true;
+    defaultEditor = false;
 
     plugins = with pkgs.vimPlugins; [
       nerdtree
@@ -33,6 +33,7 @@
       coc-clangd
       coc-java
       coc-json
+      vim-godot
       vim-wayland-clipboard
       catppuccin-vim
     ];
@@ -58,6 +59,11 @@
                 "formatting": { "command": ["nixfmt"] }
               }
             }
+          },
+          "godot": {
+            "host": "127.0.0.1",
+            "filetypes": ["gdscript"],
+            "port": 6006
           }
         }
       }

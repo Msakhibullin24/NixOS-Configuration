@@ -43,6 +43,15 @@ function! SyncTree()
   endif
 endfunction
 
+function! GodotSettings() abort
+  setlocal foldmethod=expr
+  setlocal tabstop=4
+  nnoremap <buffer> <Leader>gl :GodotRunLast<CR>
+  nnoremap <buffer> <Leader>gr :GodotRun<CR>
+  nnoremap <buffer> <Leader>gc :GodotRunCurrent<CR>
+  nnoremap <buffer> <Leader>gf :GodotRunFZF<CR>
+endfunction
+
 command! -nargs=0 Format :call CocAction('format')
 
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
@@ -53,6 +62,11 @@ augroup mygroup
   autocmd!
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+augroup godot
+  autocmd!
+  autocmd FileType gdscript call GodotSettings()
 augroup end
 
 autocmd BufRead * call SyncTree()

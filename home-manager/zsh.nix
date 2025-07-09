@@ -30,6 +30,8 @@
         # e = "$EDITOR";
         # de = "doas $EDITOR";
         nf = "neofetch";
+        c = "clear";
+        v = "$EDITOR";
       };
 
     history.size = 10000;

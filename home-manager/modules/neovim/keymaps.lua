@@ -35,9 +35,9 @@ map("n", "<M-h>", ":BufferMovePrevious<cr>", opts)
 map("n", "<leader>c", ":BufferClose<cr>", opts)
 
 map("n", "<leader>li", ":LspInfo<cr>", opts)
-map("n", "<leader>ls", ":LspStop<cr>", opts)
-map("n", "<leader>lS", ":LspStart<cr>", opts)
-map("n", "<leader>lr", ":LspRestart<cr>", opts)
+-- map("n", "<leader>ls", ":LspStop ", opts)
+-- map("n", "<leader>lS", ":LspStart<cr>", opts)
+-- map("n", "<leader>lr", ":LspRestart<cr>", opts)
 
 map("n", "<leader>ldo", function()
 	vim.diagnostic.open_float()

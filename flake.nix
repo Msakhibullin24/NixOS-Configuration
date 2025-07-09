@@ -26,11 +26,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # hyprland-qtutils = {
-    #   url = "github:hyprwm/hyprland-qtutils";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
     ayugram-desktop.url = "github:ayugram-port/ayugram-desktop";
 
     catppuccin.url = "github:catppuccin/nix";
@@ -62,7 +57,6 @@
         ayugram-overlay
         utillinux-overlay
         ags-pkgs-overlay
-        # inputs.hyprland-qtutils.overlays.default
       ];
 
       stable-overlay = final: prev: {
@@ -80,8 +74,8 @@
 
       username = "darkangel";
 
-      flavor = "mocha";
-      cursor-flavor = "mocha";
+      flavor = "latte";
+      cursor-flavor = "latte";
       accent = "pink";
       cursor-accent = "rosewater";
     in
@@ -90,6 +84,7 @@
         inherit pkgs;
         specialArgs = {
           inherit
+            username
             flavor
             accent
             cursor-flavor

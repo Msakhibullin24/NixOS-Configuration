@@ -1,10 +1,15 @@
-{ pkgs, ... }:
 {
   programs.yazi = {
     enable = true;
-    package = pkgs.yazi;
 
     settings = {
+      tasks = {
+        image_alloc = 0;
+        image_bound = [
+          16000
+          9000
+        ];
+      };
       opener = {
         open = [
           {
@@ -29,10 +34,6 @@
             orphan = true;
             desc = "Wallpaper";
           }
-        ];
-      };
-      open = {
-        append_rules = [
         ];
       };
     };

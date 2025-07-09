@@ -2,7 +2,8 @@
 {
   home.packages = with pkgs; [
     # Desktop apps
-    firefox-wayland
+    firefox-beta
+    firefox-devedition
     discord
     vesktop
     ayugram-desktop
@@ -10,7 +11,7 @@
     qbittorrent
     krita
     obs-studio
-    stable.godot_4
+    godot_4
     ani-cli
     anilibria-cli
     aseprite
@@ -31,6 +32,9 @@
     android-tools
     gnumake
     cmake
+    # Hyprland stuff
+    xdg-desktop-portal-hyprland
+    wl-clipboard
     # CLI utils
     cava
     neofetch
@@ -49,15 +53,21 @@
     zsh-powerlevel10k
     ripgrep
     jq
-    ags-pkgs.io
     virtiofsd
+    playerctl
+    cliphist
+    grim
+    grimblast
+    brightnessctl
     # GUI utils
     mpv
     vlc
     feh
-    ueberzug
     rofi-power-menu
     hyprpicker
+    wlroots
+    slurp
+    swappy
     # Games
     gamemode
     gamescope

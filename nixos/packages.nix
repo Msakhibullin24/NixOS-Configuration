@@ -19,14 +19,7 @@
     openssl
     wget
     git
-    brightnessctl
     zapret
-    # Wayland stuff
-    xwayland
-    wl-clipboard
-    cliphist
-    # WMs and stuff
-    xdg-desktop-portal-hyprland
     # Sound
     pipewire
     wireplumber
@@ -39,11 +32,6 @@
     # GPU stuff
     amdvlk
     mesa
-    # Screenshotting
-    grim
-    grimblast
-    slurp
-    swappy
     # Other
     home-manager
     adwaita-icon-theme

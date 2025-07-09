@@ -1,14 +1,19 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }:
+{
   programs.zsh.enable = true;
 
   users = {
     defaultUserShell = pkgs.zsh;
 
-    users.darkangel = {
+    users.${username} = {
       isNormalUser = true;
-      description = "DarkAngel";
-      extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" ];
-      # packages = with pkgs; [];
+      description = username;
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "input"
+        "libvirtd"
+      ];
     };
   };
 }

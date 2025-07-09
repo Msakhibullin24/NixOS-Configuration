@@ -7,7 +7,8 @@
     ./catppuccin.nix
     ./console.nix
     ./doas.nix
-    ./env.nix
+    ./environment.nix
+    ./graphics.nix
     ./hyprland.nix
     ./networking.nix
     ./otd.nix
@@ -15,7 +16,6 @@
     ./ssh.nix
     ./steam.nix
     ./users.nix
-    ./video.nix
     ./virtmanager.nix
     ./xdg.nix
     ./xserver.nix

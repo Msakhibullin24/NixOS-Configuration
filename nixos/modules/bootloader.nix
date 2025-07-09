@@ -1,13 +1,28 @@
 {
   boot = {
     loader = {
-      systemd-boot.enable = true;
       efi = {
-        canTouchEfiVariables = true;
         efiSysMountPoint = "/boot/efi";
       };
+
+      grub = {
+        enable = true;
+
+        efiSupport = true;
+        efiInstallAsRemovable = true;
+        devices = [ "nodev" ];
+        extraEntries = ''
+          menuentry "Reboot" --class restart {
+            reboot
+          }
+          menuentry "Poweroff" --class shutdown {
+            halt
+          }
+        '';
+      };
     };
-    initrd.kernelModules = ["amdgpu"];
-    kernelParams = ["psmouse.synaptics_intertouch=0"];
+
+    initrd.kernelModules = [ "amdgpu" ];
+    kernelParams = [ "psmouse.synaptics_intertouch=0" ];
   };
 }

@@ -1,12 +1,13 @@
 {
+  services.playerctld.enable = true;
   programs.waybar = {
     enable = true;
     settings = {
       mainBar = {
         layer = "top";
-        position = "bottom";
+        position = "top";
         # start_hidden = true;
-        #margin = "5 9 0 9";
+        margin = "5 9 0 9";
 
         modules-left = [
           "hyprland/workspaces"
@@ -15,7 +16,9 @@
           "keyboard-state"
           "clock" # "group/group-power"
         ];
-        modules-center = [ "hyprland/window" ];
+        modules-center = [
+          "mpris"
+        ];
         modules-right = [
           "network"
           "pulseaudio"
@@ -65,6 +68,24 @@
         "hyprland/window" = {
           format = "{title}";
           max-length = 50;
+        };
+
+        "mpris" = {
+          format = "{status_icon} {player}: {dynamic}";
+          title-len = 30;
+          artist-len = 30;
+          album-len = 30;
+          dynamic-order = [
+            "title"
+            "artist"
+            "album"
+          ];
+          # dynamic-len = 100;
+          status-icons = {
+            playing = "";
+            paused = "";
+            stopped = "";
+          };
         };
 
         "network" = {
