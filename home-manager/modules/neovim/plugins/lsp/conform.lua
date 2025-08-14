@@ -11,37 +11,23 @@ local config = {
 		return { timeout_ms = 500, lsp_format = "fallback" }
 	end,
 	formatters_by_ft = {
-		-- nixfmt-rfc-style
 		nix = { "nixfmt" },
-		-- stylua
 		lua = { "stylua" },
-		-- uncrustify
 		java = { "uncrustify" },
-		-- clang-tools
 		cpp = { "clang-format" },
 		c = { "clang-format" },
-		-- cmake-format
 		cmake = { "cmake_format" },
-		-- shfmt
 		bash = { "shfmt" },
-		-- black
 		python = { "black" },
-		-- gdtoolkit_4
 		godot = { "gdformat" },
-		-- prettierd
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		javascriptreact = { "prettierd", "prettier", stop_after_first = true },
 		typescript = { "prettierd", "prettier", stop_after_first = true },
 		typescriptreact = { "prettierd", "prettier", stop_after_first = true },
 		svelte = { "prettierd", "prettier", stop_after_first = true },
-		-- superhtml
+		css = { "prettierd", "prettier", stop_after_first = true },
 		html = { "superhtml" },
-		-- stylelint
-		css = { "stylelint" },
-		-- csharpier
 		cs = { "csharpier" },
-
-		-- codespell and nothing
 		["_"] = { "codespell", "trim_whitespace" },
 	},
 }

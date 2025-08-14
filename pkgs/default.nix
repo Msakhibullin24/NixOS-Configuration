@@ -1,4 +1,30 @@
 final: prev: {
+  acheron-cursor = prev.callPackage ./acheron-cursor { };
+  aki-aspen-cursor = prev.callPackage ./aki-aspen-cursor { };
   anilibria-cli = prev.callPackage ./anilibria-cli { };
+  black-swan-cursor = prev.callPackage ./black-swan-cursor { };
+  bocchi-the-cursor-alt-cross-cursor = prev.callPackage ./bocchi-the-cursor-alt-cross-cursor { };
   catppuccin-cursors = prev.callPackage ./catppuccin-cursors { };
+  charlotte-suzu-cursor = prev.callPackage ./charlotte-suzu { };
+  chiharu-cursor = prev.callPackage ./chiharu-cursor { };
+  firefly-cursor = prev.callPackage ./firefly-cursor { };
+  hoshimi-miyami-cursor = prev.callPackage ./hoshimi-miyami-cursor { };
+  jingliu-cursor = prev.callPackage ./jingliu-cursor { };
+  ju-fufu-cursor = prev.callPackage ./ju-fufu-cursor { };
+  kiana-herrscher-of-finality-cursor = prev.callPackage ./kiana-herrscher-of-finality-cursor { };
+  kokomi-cursor = prev.callPackage ./kokomi-cursor { };
+  liv-cursor = prev.callPackage ./liv-cursor { };
+  m200-cursor = prev.callPackage ./m200-cursor { };
+  menace-mamaki-cursor = prev.callPackage ./menace-mamaki-cursor { };
+  neivtuber-cursor = prev.callPackage ./neivtuber-cursor { };
+  ninomae-inanis-cursor = prev.callPackage ./ninomae-inanis-cursor { };
+  niryna-hanaki-cursor = prev.callPackage ./niryna-hanaki-cursor { };
+  pkp-cursor = prev.callPackage ./pkp-cursor { };
+  reichi-shinigami-reichisan-cursor = prev.callPackage ./reichi-shinigami-reichisan-cursor { };
+  rin-penrose-cursor = prev.callPackage ./rin-penrose-cursor { };
+  sylverlilith-cursor = prev.callPackage ./sylverlilith-cursor { };
+  takaraka-koharu-cursor = prev.callPackage ./takaraka-koharu-cursor { };
+  viczka-cursor = prev.callPackage ./viczka-cursor { };
+  watanabe-yuuya-cursor = prev.callPackage ./watanabe-yuuya-cursor { };
+  yuurei-angel-cursor = prev.callPackage ./yuurei-angel-cursor { };
 }

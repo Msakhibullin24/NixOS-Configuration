@@ -38,7 +38,7 @@ window#waybar.hidden {
   text-shadow: inherit;
   border-radius: inherit;
   animation: ws_hover 2s ease-in-out 1;
-  transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.682);
+  transition: all 0.2s cubic-bezier(0.55, -0.68, 0.48, 1.682);
   color: @base;
   background: @lavender;
 }
@@ -47,7 +47,7 @@ window#waybar.hidden {
   padding: 6px 14px;
   border-radius: inherit;
   animation: ws_active 2s ease-in-out 1;
-  transition: all 0.2s cubic-bezier(.55,-0.68,.48,1.682);
+  transition: all 0.2s cubic-bezier(0.55, -0.68, 0.48, 1.682);
   color: @maroon;
   background: @crust;
 }

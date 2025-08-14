@@ -39,12 +39,14 @@ in
       uncrustify
       shfmt
       black
+      nodePackages.prettier
       prettierd
       superhtml
-      stylelint
+      nodePackages.stylelint
       codespell
       csharpier
       cmake-format
+      eslint
 
       # LSP + Formatters
       clang-tools
@@ -118,7 +120,10 @@ in
           plugin = nvim-autopairs;
           config = toLuaFile ./plugins/autopairs.lua;
         }
-        nvim-ts-autotag
+        {
+          plugin = nvim-ts-autotag;
+          config = toLuaFile ./plugins/ts-autotag.lua;
+        }
         {
           plugin = gitsigns-nvim;
           config = toLuaFile ./plugins/gitsigns.lua;

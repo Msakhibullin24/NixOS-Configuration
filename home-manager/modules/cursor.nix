@@ -1,17 +1,20 @@
 {
   pkgs,
-  cursor-flavor,
-  cursor-accent,
+  # cursor-flavor,
+  # cursor-accent,
   ...
 }:
 {
   home.pointerCursor = {
-    package = pkgs.catppuccin-cursors.override {
-      flavor = cursor-flavor;
-      accent = cursor-accent;
-    };
-    name = "catppuccin-${cursor-flavor}-${cursor-accent}-cursors";
-    size = 18;
+    # package = pkgs.catppuccin-cursors.override {
+    #   flavor = cursor-flavor;
+    #   accent = cursor-accent;
+    # };
+    # name = "catppuccin-${cursor-flavor}-${cursor-accent}-cursors";
+    # size = 18;
+    package = pkgs.viczka-cursor;
+    name = "Viczka";
+    size = 24;
     hyprcursor = {
       enable = true;
       size = 24;

@@ -1,7 +1,9 @@
+{ pkgs, ... }:
 {
   services.playerctld.enable = true;
   programs.waybar = {
     enable = true;
+    package = pkgs.stable.waybar;
     settings = {
       mainBar = {
         layer = "top";

@@ -34,7 +34,6 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
--- nil
 lspconfig.nil_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -47,73 +46,61 @@ lspconfig.nil_ls.setup({
 	},
 })
 
--- lua-language-server
 lspconfig.lua_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
--- bash-language-server
 lspconfig.bashls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
--- clang-tools
 lspconfig.clangd.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
--- pyright
 lspconfig.pyright.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
--- vscode-langservers-extracted
 lspconfig.html.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
 lspconfig.cssls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
 lspconfig.jsonls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
 lspconfig.eslint.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
--- htmx-lsp
-lspconfig.htmx.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
--- tailwindcss-language-server
 lspconfig.tailwindcss.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
--- typescript-language-server
 lspconfig.ts_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
--- svelte-language-server
 lspconfig.svelte.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
--- marksman
 lspconfig.marksman.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -126,30 +113,27 @@ lspconfig.marksman.setup({
 -- 	capabilities = capabilities,
 -- })
 
--- emmet-language-server
 lspconfig.emmet_language_server.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
--- gdtoolkit_4
 lspconfig.gdscript.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
 lspconfig.gdshader_lsp.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
--- omnisharp-roslyn
 lspconfig.omnisharp.setup({
 	cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
--- cmake-language-server
 lspconfig.neocmake.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,

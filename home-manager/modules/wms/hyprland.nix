@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -112,8 +111,8 @@
         animate_manual_resizes = true;
         animate_mouse_windowdragging = true;
         enable_swallow = true;
-        render_ahead_of_time = false;
         disable_hyprland_logo = true;
+        enable_anr_dialog = false;
       };
 
       dwindle = {
@@ -147,7 +146,7 @@
 
       bind = [
         ''$mod, r, exec, random-wallpaper "$HOME/Pictures/wallpapers"''
-        ''$mod shift, r, exec, random-wallpaper "$HOME/Pictures/****"''
+        ''$mod shift, r, exec, random-wallpaper "$HOME/Pictures/nsfw"''
 
         ''ctrl alt, r, exec, swww img $HOME/Pictures/reset.png --transition-type=grow --transition-pos="top-right" --transition-bezier=".6,.1,.5,.9" --transition-duration="0.8" --transition-fps=60''
 
@@ -164,18 +163,18 @@
         ''$mod, kp_delete, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 11''
         ''$mod, kp_enter, exec, favorite-wallpaper "$HOME/Pictures/wallpapers" 12''
 
-        ''$mod shift, kp_end, exec, favorite-wallpaper "$HOME/Pictures/****" 1''
-        ''$mod shift, kp_down, exec, favorite-wallpaper "$HOME/Pictures/****" 2''
-        ''$mod shift, kp_next, exec, favorite-wallpaper "$HOME/Pictures/****" 3''
-        ''$mod shift, kp_left, exec, favorite-wallpaper "$HOME/Pictures/****" 4''
-        ''$mod shift, kp_begin, exec, favorite-wallpaper "$HOME/Pictures/****" 5''
-        ''$mod shift, kp_right, exec, favorite-wallpaper "$HOME/Pictures/****" 6''
-        ''$mod shift, kp_home, exec, favorite-wallpaper "$HOME/Pictures/****" 7''
-        ''$mod shift, kp_up, exec, favorite-wallpaper "$HOME/Pictures/****" 8''
-        ''$mod shift, kp_prior, exec, favorite-wallpaper "$HOME/Pictures/****" 9''
-        ''$mod shift, kp_insert, exec, favorite-wallpaper "$HOME/Pictures/****" 10''
-        ''$mod shift, kp_delete, exec, favorite-wallpaper "$HOME/Pictures/****" 11''
-        ''$mod shift, kp_enter, exec, favorite-wallpaper "$HOME/Pictures/****" 12''
+        ''$mod shift, kp_end, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 1''
+        ''$mod shift, kp_down, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 2''
+        ''$mod shift, kp_next, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 3''
+        ''$mod shift, kp_left, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 4''
+        ''$mod shift, kp_begin, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 5''
+        ''$mod shift, kp_right, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 6''
+        ''$mod shift, kp_home, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 7''
+        ''$mod shift, kp_up, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 8''
+        ''$mod shift, kp_prior, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 9''
+        ''$mod shift, kp_insert, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 10''
+        ''$mod shift, kp_delete, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 11''
+        ''$mod shift, kp_enter, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 12''
 
         "$mod, return, exec, kitty"
 

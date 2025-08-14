@@ -1,4 +1,8 @@
-{ cursor-flavor, cursor-accent, ... }:
+{
+  # cursor-flavor,
+  # cursor-accent,
+  ...
+}:
 {
   services.displayManager.sddm = {
     enable = true;
@@ -6,8 +10,10 @@
     autoNumlock = true;
     settings = {
       Theme = {
-        CursorTheme = "catppuccin-${cursor-flavor}-${cursor-accent}-cursors";
-        CursorSize = 18;
+        # CursorTheme = "catppuccin-${cursor-flavor}-${cursor-accent}-cursors";
+        # CursorSize = 18;
+        CursorTheme = "Viczka";
+        CursorSize = 24;
       };
     };
     sugarCandyNix = {

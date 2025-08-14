@@ -6,7 +6,7 @@
     };
     mime = {
       defaultApplications = {
-        "application/pdf" = "firefox.desktop";
+        "application/pdf" = "firefox-beta.desktop";
         "image/png" = "feh.desktop";
         "image/gif" = "feh.desktop";
         "image/jpeg" = "feh.desktop";

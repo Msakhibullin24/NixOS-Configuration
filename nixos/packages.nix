@@ -40,6 +40,7 @@
       flavor = cursor-flavor;
       accent = cursor-accent;
     })
+    viczka-cursor
     (catppuccin-papirus-folders.override {
       inherit flavor accent;
     })

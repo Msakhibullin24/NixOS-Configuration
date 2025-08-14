@@ -44,10 +44,11 @@ ffzap.com
 betterttv.net
 7tv.app
 7tv.io
+cache.nixos.org
 cache.garnix.io
-garnix.io
-search.nixos.org
 nixos.org
-pixelos.net
-twrp.me
-dl.twrp.me
+search.nixos.org
+garnix.io
+codeforces.com
+codeforces.org
+www.luscious.net

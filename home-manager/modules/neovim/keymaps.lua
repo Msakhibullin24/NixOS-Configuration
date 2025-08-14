@@ -14,8 +14,8 @@ map("n", "<C-h>", "<C-w>h", opts)
 
 map("n", "<M-S-k>", ":resize -2<cr>", opts)
 map("n", "<M-S-j>", ":resize +2<cr>", opts)
-map("n", "<M-S-l>", ":vertical resize -2<cr>", opts)
-map("n", "<M-S-h>", ":vertical resize +2<cr>", opts)
+map("n", "<M-S-h>", ":vertical resize -2<cr>", opts)
+map("n", "<M-S-l>", ":vertical resize +2<cr>", opts)
 
 map("n", "<M-k>", ":m-2<cr>", opts)
 map("n", "<M-j>", ":m+1<cr>", opts)

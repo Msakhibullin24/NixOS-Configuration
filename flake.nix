@@ -16,11 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ags = {
-      url = "github:aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     sddm-sugar-candy-nix = {
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,15 +43,11 @@
       utillinux-overlay = final: prev: {
         utillinux = prev.util-linux;
       };
-      ags-pkgs-overlay = final: prev: {
-        ags-pkgs = inputs.ags.packages.${system};
-      };
 
       overlays = [
         pkgs-overlay
         ayugram-overlay
         utillinux-overlay
-        ags-pkgs-overlay
       ];
 
       stable-overlay = final: prev: {
@@ -74,10 +65,10 @@
 
       username = "darkangel";
 
-      flavor = "latte";
-      cursor-flavor = "latte";
+      flavor = "mocha";
+      cursor-flavor = "mocha";
       accent = "pink";
-      cursor-accent = "rosewater";
+      cursor-accent = "pink";
     in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -115,7 +106,6 @@
 
         modules = [
           ./home-manager/home.nix
-          inputs.ags.homeManagerModules.default
           inputs.nixvim.homeManagerModules.nixvim
           inputs.catppuccin.homeModules.catppuccin
         ];
