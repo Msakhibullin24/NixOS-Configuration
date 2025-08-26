@@ -17,6 +17,7 @@
           "custom/touchpad"
           "keyboard-state"
           "clock" # "group/group-power"
+          "custom/_check"
         ];
         modules-center = [
           "mpris"
@@ -64,6 +65,13 @@
         "clock" = {
           format = "{:%H:%M} 󰥔";
           format-alt = "{:%d.%m.%Y} 󰥔";
+          tooltip = false;
+        };
+
+        "custom/_check" = {
+          exec = "_check";
+          interval = 1;
+          min-length = 5;
           tooltip = false;
         };
 

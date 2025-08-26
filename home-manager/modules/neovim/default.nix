@@ -50,7 +50,7 @@ in
 
       # LSP + Formatters
       clang-tools
-      gdtoolkit_4
+      stable.gdtoolkit_4
 
       # Debugger
       vscode-extensions.vadimcn.vscode-lldb
@@ -89,10 +89,10 @@ in
           plugin = lualine-nvim;
           config = toLuaFile ./plugins/lualine.lua;
         }
-        {
-          plugin = noice-nvim;
-          config = toLuaFile ./plugins/noice.lua;
-        }
+        # {
+        #   plugin = noice-nvim;
+        #   config = toLuaFile ./plugins/noice.lua;
+        # }
 
         # Useful tools
         {

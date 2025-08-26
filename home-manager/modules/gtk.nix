@@ -20,12 +20,5 @@
         };
         name = "catppuccin-${flavor}-${accent}-${size}";
       };
-
-    iconTheme = {
-      package = pkgs.catppuccin-papirus-folders.override {
-        inherit flavor accent;
-      };
-      name = "Papirus";
-    };
   };
 }

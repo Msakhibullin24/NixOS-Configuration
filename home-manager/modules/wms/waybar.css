@@ -84,6 +84,15 @@ window#waybar.hidden {
   background: @base;
 }
 
+#custom-_check {
+  margin-right: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 14px;
+  color: @red;
+  background: @base;
+}
+
 #window {
   margin-right: 8px;
   padding-right: 16px;

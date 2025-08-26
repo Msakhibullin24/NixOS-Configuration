@@ -106,7 +106,7 @@
 
         modules = [
           ./home-manager/home.nix
-          inputs.nixvim.homeManagerModules.nixvim
+          inputs.nixvim.homeModules.nixvim
           inputs.catppuccin.homeModules.catppuccin
         ];
       };

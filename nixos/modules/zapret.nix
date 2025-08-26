@@ -51,7 +51,17 @@
         NFQWS_UDP_PKT_OUT=$((6+$AUTOHOSTLIST_RETRANS_THRESHOLD))
         NFQWS_UDP_PKT_IN=0
 
-        # МГТС
+        NFQWS_OPT="
+        --filter-udp=443 --hostlist=${./zapret/list-general.txt} --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fake-quic=${./zapret/quic_initial_www_google_com.bin} --new
+        --filter-udp=50000-50100 --filter-l7=discord,stun --dpi-desync=fake --dpi-desync-repeats=6 --new
+        --filter-tcp=80 --hostlist=${./zapret/list-general.txt} --dpi-desync=fake,multisplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new
+        --filter-tcp=443 --hostlist=${./zapret/list-general.txt} --dpi-desync=multisplit --dpi-desync-repeats=2 --dpi-desync-split-seqovl=681 --dpi-desync-split-pos=1 --dpi-desync-split-seqovl-pattern=${./zapret/tls_clienthello_www_google_com.bin} --new
+        --filter-udp=443 --ipset=${./zapret/ipset-all.txt} --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fake-quic=${./zapret/quic_initial_www_google_com.bin} --new
+        --filter-tcp=80 --ipset=${./zapret/ipset-all.txt} --dpi-desync=fake,multisplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new
+        --filter-tcp=443,1024-65535 --ipset=${./zapret/ipset-all.txt} --dpi-desync=multisplit --dpi-desync-split-seqovl=681 --dpi-desync-split-pos=1 --dpi-desync-split-seqovl-pattern=${./zapret/tls_clienthello_www_google_com.bin} --new
+        --filter-udp=1024-65535 --ipset=${./zapret/ipset-all.txt} --dpi-desync=fake --dpi-desync-autottl=2 --dpi-desync-repeats=12 --dpi-desync-any-protocol=1 --dpi-desync-fake-unknown-udp=${./zapret/quic_initial_www_google_com.bin} --dpi-desync-cutoff=n2
+        "
+
         # NFQWS_OPT="
         # --filter-udp=443 --hostlist=${./zapret/list-general.txt} --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fake-quic=${./zapret/quic_initial_www_google_com.bin} --new
         # --filter-udp=50000-50100 --filter-l7=discord,stun --dpi-desync=fake --dpi-desync-repeats=6 --new
@@ -61,35 +71,6 @@
         # --filter-tcp=80 --ipset=${./zapret/ipset-all.txt} --dpi-desync=fake,multisplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new
         # --filter-tcp=443,1024-65535 --ipset=${./zapret/ipset-all.txt} --dpi-desync=fake --dpi-desync-autottl=2 --dpi-desync-repeats=6 --dpi-desync-fooling=badseq --dpi-desync-fake-tls=${./zapret/tls_clienthello_www_google_com.bin} --new
         # --filter-udp=1024-65535 --ipset=${./zapret/ipset-all.txt} --dpi-desync=fake --dpi-desync-autottl=2 --dpi-desync-repeats=10 --dpi-desync-any-protocol=1 --dpi-desync-fake-unknown-udp=${./zapret/quic_initial_www_google_com.bin} --dpi-desync-cutoff=n2
-        # "
-
-        # МГТС2
-        NFQWS_OPT="
-        --filter-udp=443 --hostlist=${./zapret/list-general.txt} --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fake-quic=${./zapret/quic_initial_www_google_com.bin} --new
-        --filter-udp=50000-50100 --filter-l7=discord,stun --dpi-desync=fake --dpi-desync-repeats=6 --new
-        --filter-tcp=80 --hostlist=${./zapret/list-general.txt} --dpi-desync=fake,multisplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new
-        --filter-tcp=443 --hostlist=${./zapret/list-general.txt} --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fooling=md5sig --dpi-desync-fake-tls=${./zapret/tls_clienthello_www_google_com.bin} --new
-        --filter-udp=443 --ipset=${./zapret/ipset-all.txt} --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fake-quic=${./zapret/quic_initial_www_google_com.bin} --new
-        --filter-tcp=80 --ipset=${./zapret/ipset-all.txt} --dpi-desync=fake,multisplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new
-        --filter-tcp=443,1024-65535 --ipset=${./zapret/ipset-all.txt} --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fooling=md5sig --dpi-desync-fake-tls=${./zapret/tls_clienthello_www_google_com.bin} --new
-        --filter-udp=1024-65535 --ipset=${./zapret/ipset-all.txt} --dpi-desync=fake --dpi-desync-autottl=2 --dpi-desync-repeats=12 --dpi-desync-any-protocol=1 --dpi-desync-fake-unknown-udp=${./zapret/quic_initial_www_google_com.bin} --dpi-desync-cutoff=n3
-        "
-
-        # Method1
-        # NFQWS_OPT="
-        # --filter-tcp=80,443 --dpi-desync=disorder2 --dpi-desync-ttl=12 --new
-        # --filter-udp=443,50000-65535 --dpi-desync=fake,tamper --dpi-desync-any-protocol --dpi-desync-repeats=19
-        # "
-
-        # Method2
-        # NFQWS_OPT="
-        # --filter-tcp=80,443 --methodeol --new
-        # --filter-udp=443,50000-65535 --dpi-desync=fake,tamper --dpi-desync-any-protocol --dpi-desync-repeats=19
-        # "
-
-        # Only UDP
-        # NFQWS_OPT="
-        # --filter-udp=443,50000-65535 --dpi-desync=fake,tamper --dpi-desync-any-protocol --dpi-desync-repeats=19
         # "
 
         # none,ipset,hostlist,autohostlist

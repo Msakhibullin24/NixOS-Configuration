@@ -5,11 +5,13 @@ let
     builtins.readFile ./favoritewallpaper.sh
   );
   random-wallpaper = pkgs.writeScriptBin "random-wallpaper" (builtins.readFile ./randomwallpaper.sh);
+  _check = pkgs.writeScriptBin "_check" (builtins.readFile ./_check.sh);
 in
 {
   home.packages = [
     toggle-touchpad
     favorite-wallpaper
     random-wallpaper
+    _check
   ];
 }

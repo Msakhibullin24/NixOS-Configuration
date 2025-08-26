@@ -28,7 +28,6 @@
     clang
     nodejs
     nodePackages.pnpm
-    ngrok
     android-tools
     gnumake
     cmake
@@ -84,7 +83,7 @@
       ];
     })
     mindustry-wayland
-    terraria-server
+    # terraria-server
     osu-lazer-bin
     xonotic
     # Other
