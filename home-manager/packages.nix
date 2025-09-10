@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     # Desktop apps
-    firefox-beta
+    firefox
     firefox-devedition
     discord
     vesktop

@@ -176,12 +176,11 @@
         ''$mod shift, kp_delete, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 11''
         ''$mod shift, kp_enter, exec, favorite-wallpaper "$HOME/Pictures/nsfw" 12''
 
-        "$mod, return, exec, kitty"
+        "$mod, return, exec, $TERMINAL"
 
-        # "$mod shift, w, exec, firefox"
         #''$mod shift, v, exec, vesktop --proxy-server="socks5://127.0.0.1:3128"''
         #''$mod shift, d, exec, discord --proxy-server=" socks5://127.0.0.1:3128 "''
-        "$mod shift, w, exec, firefox-beta"
+        "$mod shift, w, exec, $BROWSER"
         "$mod shift, v, exec, vesktop"
         "$mod shift, d, exec, discord"
         "$mod shift, t, exec, ayugram-desktop"

@@ -51,6 +51,7 @@ nixos.org
 search.nixos.org
 garnix.io
 cache.garnix.io
+cache.iog.io
 codeforces.com
 codeforces.org
 www.luscious.net

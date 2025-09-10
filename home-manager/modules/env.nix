@@ -1,7 +1,6 @@
 {
   home.sessionVariables = {
-    # EDITOR = "nvim";
-    BROWSER = "firefox-beta";
-    TERM = "foot";
+    BROWSER = "firefox";
+    TERMINAL = "kitty";
   };
 }
