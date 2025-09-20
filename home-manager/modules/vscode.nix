@@ -3,7 +3,7 @@
     programs.vscode = {
         enable = true;
         extensions = with pkgs.vscode-extensions; [
-            cline
+            rooveterinaryinc.roo-cline
             catppuccin.catppuccin-vsc
             catppuccin.catppuccin-vsc-icons
             ms-python.python
