@@ -21,6 +21,7 @@
         jupyterlab
       ]
     ))
+    uv
     clang
     nodejs
     nodePackages.pnpm
