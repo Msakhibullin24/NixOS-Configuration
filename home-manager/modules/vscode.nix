@@ -5,7 +5,6 @@
         extensions = with pkgs.vscode-extensions; [
             rooveterinaryinc.roo-cline
             catppuccin.catppuccin-vsc
-            ms-python.python
         ];
     };
 }

@@ -35,7 +35,6 @@
     neofetch
     libsixel
     imagemagick
-    radeontop
     gdu
     stable.kalker
     cmatrix

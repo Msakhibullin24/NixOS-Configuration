@@ -1,8 +1,8 @@
 {
   imports = [
-    ./neovim
+    # ./neovim
     ./sources
-    ./vim
+    # ./vim
     ./wms
 
     ./btop.nix
