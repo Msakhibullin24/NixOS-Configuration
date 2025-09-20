@@ -21,7 +21,7 @@
       settings = {
         Background = ./backgrounds/oshino-shinobu.png;
         ScreenWidth = 1920;
-        ScreenHeight = 1080;
+        ScreenHeight = 1280;
         FormPosition = "left";
         HaveFormBackground = true;
         PartialBlur = true;
