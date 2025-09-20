@@ -1,5 +1,12 @@
 { config, pkgs, lib, ... }:
 {
+  services.displayManager.defaultSession = "hyprland";
+  services.displayManager.enable = true;
+  services.displayManager.autoLogin = {
+    user = "robot";
+    enable = true;
+  };
+
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
