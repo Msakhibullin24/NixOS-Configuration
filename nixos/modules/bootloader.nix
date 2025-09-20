@@ -10,7 +10,6 @@
 
         efiSupport = true;
         efiInstallAsRemovable = true;
-        devices = [ "nodev" ];
         extraEntries = ''
           menuentry "Reboot" --class restart {
             reboot
