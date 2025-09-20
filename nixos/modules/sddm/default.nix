@@ -1,8 +1,4 @@
-{
-  # cursor-flavor,
-  # cursor-accent,
-  ...
-}:
+{ config, pkgs, lib, ... }:
 {
   services.displayManager.sddm = {
     enable = true;
@@ -10,8 +6,6 @@
     autoNumlock = true;
     settings = {
       Theme = {
-        # CursorTheme = "catppuccin-${cursor-flavor}-${cursor-accent}-cursors";
-        # CursorSize = 18;
         CursorTheme = "Viczka";
         CursorSize = 24;
       };

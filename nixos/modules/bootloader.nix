@@ -22,7 +22,7 @@
       };
     };
 
-    initrd.kernelModules = [ "amdgpu" ];
+    initrd.kernelModules = [ ];
     kernelParams = [ "psmouse.synaptics_intertouch=0" ];
   };
 }

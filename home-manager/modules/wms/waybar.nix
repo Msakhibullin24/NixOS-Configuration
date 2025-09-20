@@ -136,7 +136,7 @@
         };
 
         "backlight" = {
-          device = "amdgpu_bl1";
+          device = "inel_backlight";
           format = "{percent}% {icon}";
           format-icons = [
             ""

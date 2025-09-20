@@ -29,7 +29,6 @@
     bluez5
     bluez-tools
     # GPU stuff
-    amdvlk
     mesa
     # Other
     home-manager
