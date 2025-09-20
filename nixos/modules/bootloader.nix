@@ -10,6 +10,7 @@
 
         efiSupport = true;
         efiInstallAsRemovable = true;
+        devices = [ "/dev/nvme0n1" ];
         extraEntries = ''
           menuentry "Reboot" --class restart {
             reboot
@@ -21,7 +22,7 @@
       };
     };
 
-    initrd.kernelModules = [ ];
+    initrd.kernelModules = [];
     kernelParams = [ "psmouse.synaptics_intertouch=0" ];
   };
 }
