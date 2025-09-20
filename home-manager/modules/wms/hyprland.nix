@@ -6,7 +6,7 @@
     settings = {
       "$mod" = "SUPER";
 
-      monitor = ",1920x1080@60,auto,1";
+      monitor = ",1920x1280@60,auto,1";
 
       env = [
         "NIXOS_OZONE_WL,1"
