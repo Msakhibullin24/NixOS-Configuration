@@ -5,7 +5,6 @@
     ./vim
     ./wms
 
-    ./alacritty.nix
     ./btop.nix
     ./catppuccin.nix
     ./cava.nix
@@ -19,5 +18,7 @@
     ./mpv.nix
     ./rofi.nix
     ./yazi.nix
+    ./vscode.nix
+    ./ollama.nix
   ];
 }

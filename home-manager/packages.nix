@@ -12,8 +12,6 @@
     krita
     obs-studio
     godot_4
-    ani-cli
-    anilibria-cli
     aseprite
     gparted
     blender
@@ -21,14 +19,11 @@
     # Network stuff
     socat
     zerotierone
-    byedpi
     # Coding stuff
     gdb
     (python3Full.withPackages (
       ps: with ps; [
         debugpy
-        tkinter
-        pygame
       ]
     ))
     clang
@@ -73,25 +68,7 @@
     wlroots
     slurp
     swappy
-    # Games
-    gamemode
-    gamescope
-    mangohud
-    steam
-    (lutris.override {
-      extraPkgs = pkgs: [
-        jdk
-        wine
-        winetricks
-        kdePackages.kdialog
-        libadwaita
-        gtk4
-      ];
-    })
-    mindustry-wayland
-    # terraria-server
-    osu-lazer-bin
-    xonotic
-    # Other
+
+    ollama
   ];
 }

@@ -12,14 +12,11 @@
     ./hyprland.nix
     ./networking.nix
     ./nixld.nix
-    ./otd.nix
     ./sound.nix
     ./ssh.nix
-    ./steam.nix
     ./users.nix
-    ./virtmanager.nix
     ./xdg.nix
     ./xserver.nix
-    ./zapret.nix
+    ./virtualization.nix
   ];
 }

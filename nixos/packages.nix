@@ -19,7 +19,6 @@
     openssl
     wget
     git
-    zapret
     # Sound
     pipewire
     wireplumber
