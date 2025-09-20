@@ -63,7 +63,7 @@
         config.allowUnfree = true;
       };
 
-      username = "darkangel";
+      username = "robot";
 
       flavor = "mocha";
       cursor-flavor = "mocha";

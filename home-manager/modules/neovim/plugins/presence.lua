@@ -7,7 +7,7 @@ local config = {
 	buttons = {
 		{
 			label = "GitHub Profile",
-			url = "https://github.com/DarkAngel285",
+			url = "",
 		},
 	},
 }
