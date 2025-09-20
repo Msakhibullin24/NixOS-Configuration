@@ -8,5 +8,5 @@
             catppuccin.catppuccin-vsc-icons
             ms-python.python
         ];
-    }
+    };
 }

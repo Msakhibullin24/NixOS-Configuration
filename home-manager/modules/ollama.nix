@@ -2,5 +2,5 @@
 {
     services.ollama = {
         enable = true;
-    }
+    };
 }
