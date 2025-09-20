@@ -4,17 +4,12 @@
     # Desktop apps
     firefox
     firefox-devedition
-    discord
-    vesktop
     ayugram-desktop
     keepassxc
     qbittorrent
     krita
     obs-studio
-    godot_4
-    aseprite
     gparted
-    blender
     libreoffice-fresh
     # Network stuff
     socat
@@ -24,12 +19,12 @@
     (python3Full.withPackages (
       ps: with ps; [
         debugpy
+        jupyterlab
       ]
     ))
     clang
     nodejs
     nodePackages.pnpm
-    android-tools
     gnumake
     cmake
     # Hyprland stuff
