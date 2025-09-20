@@ -24,7 +24,13 @@
     byedpi
     # Coding stuff
     gdb
-    (python3.withPackages (ps: with ps; [ debugpy ]))
+    (python3Full.withPackages (
+      ps: with ps; [
+        debugpy
+        tkinter
+        pygame
+      ]
+    ))
     clang
     nodejs
     nodePackages.pnpm

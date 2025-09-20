@@ -11,6 +11,7 @@
     ./graphics.nix
     ./hyprland.nix
     ./networking.nix
+    ./nixld.nix
     ./otd.nix
     ./sound.nix
     ./ssh.nix
