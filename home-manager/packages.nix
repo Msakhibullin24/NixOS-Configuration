@@ -16,9 +16,8 @@
     zerotierone
     # Coding stuff
     gdb
-    (python3Full.withPackages (
+    (python3.withPackages (
       ps: with ps; [
-        debugpy
         jupyterlab
       ]
     ))
