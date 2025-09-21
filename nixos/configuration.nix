@@ -4,6 +4,12 @@
     ./packages.nix
   ];
 
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/root";
+    fsType = "btrfs";
+    options = [ "subvol=rootfs" "compress=zstd" ];
+  };
+
   networking.hostName = "nixos";
 
   time.timeZone = "Europe/Moscow";
