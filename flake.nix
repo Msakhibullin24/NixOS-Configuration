@@ -24,6 +24,11 @@
     ayugram-desktop.url = "github:ayugram-port/ayugram-desktop";
 
     catppuccin.url = "github:catppuccin/nix";
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -31,6 +36,7 @@
       nixpkgs,
       nixpkgs-stable,
       home-manager,
+      disko,
       ...
     }@inputs:
     let
@@ -84,6 +90,8 @@
         };
 
         modules = [
+          ./disko.nix
+          inputs.disko.nixosModules.disko
           ./nixos/configuration.nix
           inputs.nixvim.nixosModules.nixvim
           inputs.sddm-sugar-candy-nix.nixosModules.default
