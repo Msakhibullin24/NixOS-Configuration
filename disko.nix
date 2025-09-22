@@ -29,7 +29,6 @@
               size = "100%";
               content = {
                 type = "btrfs";
-                label = "root";
                 extraArgs = [ "-f" ];
                 subvolumes = {
                   "/rootfs" = {
@@ -47,6 +46,8 @@
                     mountpoint = "/nix";
                   };
                 };
+
+                mountpoint = "/";
               };
             };
           };
