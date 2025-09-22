@@ -24,7 +24,7 @@ final: prev: {
   rin-penrose-cursor = prev.callPackage ./rin-penrose-cursor { };
   sylverlilith-cursor = prev.callPackage ./sylverlilith-cursor { };
   takaraka-koharu-cursor = prev.callPackage ./takaraka-koharu-cursor { };
-  viczka-cursor = prev.callPackage ./viczka-cursor { };
+  # viczka-cursor = prev.callPackage ./viczka-cursor { }; # Temporarily commented out
   watanabe-yuuya-cursor = prev.callPackage ./watanabe-yuuya-cursor { };
   yuurei-angel-cursor = prev.callPackage ./yuurei-angel-cursor { };
 }
