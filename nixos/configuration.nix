@@ -1,14 +1,9 @@
 {
   imports = [
+    ./hardware-configuration.nix
     ./modules
     ./packages.nix
   ];
-
-  fileSystems."/" = {
-    device = "/dev/disk/by-label/root";
-    fsType = "btrfs";
-    options = [ "subvol=rootfs" "compress=zstd" ];
-  };
 
   networking.hostName = "nixos";
 
