@@ -2,7 +2,7 @@
   boot = {
     loader = {
       efi = {
-        efiSysMountPoint = "/boot/efi";
+        efiSysMountPoint = "/boot";
       };
 
       grub = {
@@ -10,7 +10,7 @@
 
         efiSupport = true;
         efiInstallAsRemovable = true;
-        devices = [ "/dev/nvme0n1" ];
+        devices = [ "nodev" ];
         extraEntries = ''
           menuentry "Reboot" --class restart {
             reboot
